@@ -46,7 +46,7 @@ class CartesioTestsManager
 	CartesioTestsHandler _cartesio; /* cartesio */
 	// -----------------------------------------------------------------------------------------
 
-	// Node Input Parameters -------------------------------------------------------------------
+	// Input Parameters -------------------------------------------------------------------
 	// Cartesio -----------------------------------------------------------------------------------
 	std::string _robotUrdfPath; /* robot urdf path */
 	std::string _robotSrdfPath; /* robot srdf path */
@@ -55,6 +55,7 @@ class CartesioTestsManager
 	std::string _taskName; /* task name */
 	std::string _solverType; /* cartesio solver type */
 	bool _robotIsFloating; /* is a floating robot (true-false) */
+	double _targetTime; /* target reaching time */
 	// -----------------------------------------------------------------------------------------
 
 	// Functions -------------------------------------------------------------------------------

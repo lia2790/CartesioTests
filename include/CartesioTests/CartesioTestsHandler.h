@@ -38,6 +38,7 @@ class CartesioTestsHandler
 	XBot::ModelInterface::Ptr _model; /* robot model */
 	CartesianTask::Ptr _task; /* task */
 	CartesianInterfaceImpl::Ptr _solver; /* cartesian interface solver */
+	double _dt; /* period */
 
 public:
 	/////////////// COSTRUCTOR ////////////////////
@@ -70,14 +71,46 @@ public:
 	 */
 	void setTask(std::string taskName);
 	/**
-	 * set home
-	 *@return void
+	 * set task target time
+	 * @param target_time: target time
+	 * @return void
 	 */
-	void Homing();
+	void setTaskTargetTime(double target_time);
+	/**
+	 * set task target time
+	 * @param Tref: reference transformation
+	 * @param target_time: target time
+	 * @return void
+	 */
+	void setTaskTarget(Eigen::Affine3d Tref, double target_time);
+	/**
+	 * start control
+	 * @return void
+	 */
+	void startControl();
 
+	
 	/////////////// DISTRUCTOR ////////////////////
 	/* distructor of the class */
 	~CartesioTestsHandler();
+
+private:
+	/**
+	 * set home
+	 * @return void
+	 */
+	void homing();
+	/**
+	 * control robot: compute the control law and update the state
+	 * @return void
+	 */
+	void control();
+	/**
+	 * return joint position norm
+	 * @return joint position norm
+	 */
+	double precision();
+
 };
 
 #endif // __CARTESIO_TESTS_HANDLER_
