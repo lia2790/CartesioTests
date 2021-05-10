@@ -60,12 +60,26 @@ void CartesioTestsManager::initCartesIO()
 	_cartesio.setProblem(_taskPath,_solverType);
 	_cartesio.setTask(_taskName);
 	_cartesio.setTaskTargetTime(_targetTime);
+	_cartesio.startControl();
+}
+
+bool CartesioTestsManager::newReference()
+{
+	// new reference
+	return false;
+}
+
+void CartesioTestsManager::startControl()
+{
+	// start control
+	_cartesio.startControl();
 }
 
 void CartesioTestsManager::timer_callback(const ros::TimerEvent& timer)
 {
 	// control
-	_cartesio.startControl();
+	if(newReference())
+		startControl();
 
 	_time += _period; // update time
 }

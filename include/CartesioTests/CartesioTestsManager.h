@@ -95,6 +95,16 @@ public:
 	 * @return void
 	 */
 	void initCartesIO();
+	/**
+	 * set new task reference
+	 * @return true if a new reference received otherwise false
+	 */
+	bool newReference();
+	/**
+	 * start control
+	 * @return void
+	 */
+	void startControl();
 };
 
 #endif // __CARTESIO_TESTS_MANAGER_
