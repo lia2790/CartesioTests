@@ -34,4 +34,4 @@ CartesioTests requires the following dependences:
 
 ```c++
 roslaunch cartesio_tests CartesioTests.launch
-```![BigPinkDivider](https://user-images.githubusercontent.com/15608027/117687370-058a9880-b1b8-11eb-89cb-5ff251ccdf2a.png)
+```
