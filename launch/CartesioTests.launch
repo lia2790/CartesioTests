@@ -9,7 +9,7 @@
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 	<!-- CartesioTests rviz -->
-	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find cartesio_tests)/configs/rviz/" />
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find cartesio_tests)/configs/rviz/disp.rviz" />
 
 	<!-- CartesioTests load configuration file -->
 	<rosparam file="$(find cartesio_tests)/configs/CartesioTests.yaml" command="load"/>
