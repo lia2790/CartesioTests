@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-	<node pkg="cartesio_tests" type="CartesioTests" name="CartesioTests" output="screen" />
+	<rosparam file="$(find cartesio_tests)/configs/CartesioTests.yaml" command="load"/>
+	<node pkg="cartesio_tests" type="CartesioTests" name="CartesioTests" cwd = "node" respawn="false" output="screen" />
 </launch>

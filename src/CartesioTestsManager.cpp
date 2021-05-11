@@ -51,10 +51,10 @@ void CartesioTestsManager::loadInputs()
 	_nh.param<std::string>("/robot_urdf_path",_robotUrdfPath,"/config");
 	_nh.param<std::string>("/robot_srdf_path",_robotSrdfPath,"/config");
 	_nh.param<std::string>("/robot_task_path",_taskPath,"/config");
-	_nh.param<std::string>("/robot_model_type",_robotModelType,"/config");
-	_nh.param<std::string>("/solver_type",_solverType,"/config");
-	_nh.param<std::string>("/task_name",_taskName,"/config");
-	_nh.param<double>("/target_time",_targetTime,true);
+	_nh.param<std::string>("/robot_model_type",_robotModelType,"RBDL");
+	_nh.param<std::string>("/solver_type",_solverType,"OpenSoT");
+	_nh.param<std::string>("/task_name",_taskName,"taskA");
+	_nh.param<double>("/target_time",_targetTime,0.03);
 	_nh.param<bool>("/robot_is_floating",_robotIsFloating,true);
 }
 
