@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="cartesio_tests" type="CartesioTests" name="CartesioTests" output="screen" />
+</launch>
