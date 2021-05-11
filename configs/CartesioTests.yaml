@@ -1,0 +1,8 @@
+robot_urdf_path: "/home/liana/catkin_ws/src/CartesioTests/robot/coman/urdf/coman.urdf"
+robot_srdf_path: "/home/liana/catkin_ws/src/CartesioTests/robot/coman/srdf/coman.srdf"
+robot_task_path: "/home/liana/catkin_ws/src/CartesioTests/robot/coman/task/coman_stack.yaml"
+robot_is_floating: true
+robot_model_type: "RBDL"
+solver_type: "OpenSot"
+task_name: "leftarm"
+target_time: 0.3

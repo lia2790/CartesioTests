@@ -47,9 +47,15 @@ void CartesioTestsManager::initROSNode()
 }
 void CartesioTestsManager::loadInputs()
 {
-	
-
-
+	// loading inputs
+	_nh.param<std::string>("/robot_urdf_path",_robotUrdfPath,"/config");
+	_nh.param<std::string>("/robot_srdf_path",_robotSrdfPath,"/config");
+	_nh.param<std::string>("/robot_task_path",_taskPath,"/config");
+	_nh.param<std::string>("/robot_model_type",_robotModelType,"/config");
+	_nh.param<std::string>("/solver_type",_solverType,"/config");
+	_nh.param<std::string>("/task_name",_taskName,"/config");
+	_nh.param<double>("/target_time",_targetTime,true);
+	_nh.param<bool>("/robot_is_floating",_robotIsFloating,true);
 }
 
 void CartesioTestsManager::initCartesIO()
