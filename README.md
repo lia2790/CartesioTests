@@ -25,14 +25,6 @@ git clone https://github.com/lia2790/CartesioTests.git
 ```
 inside the _**src folder**_ of a [catkin'](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) workspace and that is it.
 
-## ➤ Dependences
-<img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
-
-CartesioTests requires the following dependences:
-* [Eigen3](https://eigen.tuxfamily.org/index.php?title=Main_Page): to handle with basic algebra;
-* [CartesIO](https://advrhumanoids.github.io/CartesianInterface/): to handle robot tasks;
-
-
 ## ➤ Execution
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
 
@@ -41,3 +33,11 @@ CartesioTests requires the following dependences:
 ```c++
 roslaunch cartesio_tests CartesioTests.launch
 ```
+
+## ➤ Dependences
+<img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
+
+CartesioTests requires the following dependences:
+* [Eigen3](https://eigen.tuxfamily.org/index.php?title=Main_Page): to handle with basic algebra;
+* [CartesIO](https://advrhumanoids.github.io/CartesianInterface/): to handle robot tasks;
+
