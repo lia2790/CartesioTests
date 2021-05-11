@@ -3,7 +3,7 @@
 
 **Cartesio is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
 the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
-**ROS instruction**, providing a **robot and task description** with **URDF** and **SRDF files**, the software accounts for an autonomous execution of the robot control 
+**ROS instruction**, providing a **robot and task description** with **[URDF](http://wiki.ros.org/urdf)** and **[SRDF files](http://wiki.ros.org/srdf)**, the software accounts for an autonomous execution of the robot control 
 for achieving the desired goal. The **CartesioTests Repository** basically constitutes a **Cartesio Wrapper**. Specifing the robot and the robot target, the CartesioTests
 executes all CartesIO routines for **achieving the desired target hiding them to the user** which should **only specify** the **required inputs** and **execute ROS node**.
 
