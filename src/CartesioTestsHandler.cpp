@@ -97,7 +97,7 @@ void CartesioTestsHandler::control()
 double CartesioTestsHandler::precision()
 {
     Eigen::VectorXd qdot;
-    _model->setJointVelocity(qdot);
+    _model->getJointVelocity(qdot);
     return qdot.norm();
 }
 
