@@ -69,6 +69,7 @@ void CartesioTestsHandler::setTaskTargetTime(double target_time)
     // set reference
     Eigen::Affine3d Tref;
     _task->getPoseReference(Tref);
+    Tref.translation()[0] += 5.0;
     setTaskTarget(Tref, target_time);
 }
 

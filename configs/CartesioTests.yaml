@@ -5,4 +5,4 @@ robot_is_floating: true
 robot_model_type: "RBDL"
 solver_type: "OpenSot"
 task_name: "left_hand"
-target_time: 3.0
+target_time: 10.0
