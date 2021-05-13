@@ -16,13 +16,13 @@
 */
 
 #include <ros/ros.h>
-#include <CartesioTests/CartesioTestsManager.h>
+#include <CartesioTestsROSClient/CartesioTestsROSClientManager.h>
 
 int main(int argc, char **argv)
 {
 
-	ros::init (argc, argv, "CartesioTests" );
-	CartesioTestsManager manager("cartesio_tests");
+	ros::init (argc, argv, "CartesioTestsROSClient" );
+	CartesioTestsROSClientManager manager("cartesio_tests_rosclient");
 	manager.spin();
 
 	return 0;

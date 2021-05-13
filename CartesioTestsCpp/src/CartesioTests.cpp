@@ -21,8 +21,8 @@
 int main(int argc, char **argv)
 {
 
-	ros::init (argc, argv, "CartesioTests" );
-	CartesioTestsManager manager("cartesio_tests");
+	ros::init (argc, argv, "CartesioTestsCpp" );
+	CartesioTestsManager manager("cartesio_tests_cpp");
 	manager.spin();
 
 	return 0;
