@@ -6,8 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
-        - /InteractiveMarkers1
+        - /RobotModel1/Status1
+        - /Axes1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -359,24 +360,255 @@ Visualization Manager:
           Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
-      TF Prefix: ci
+      TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz/InteractiveMarkers
-      Enable Transparency: true
+    - Class: rviz/Axes
       Enabled: true
-      Name: InteractiveMarkers
-      Show Axes: false
-      Show Descriptions: true
-      Show Visual Aids: false
-      Update Topic: /Com_cartesian_marker_server/update
+      Length: 1
+      Name: Axes
+      Radius: 0.0010000000474974513
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        DWL:
+          Value: true
+        DWS:
+          Value: true
+        DWYTorso:
+          Value: true
+        LElb:
+          Value: true
+        LFoot:
+          Value: true
+        LFootmot:
+          Value: true
+        LForearm:
+          Value: true
+        LHipMot:
+          Value: true
+        LLowLeg:
+          Value: true
+        LShp:
+          Value: true
+        LShr:
+          Value: true
+        LShy:
+          Value: true
+        LSoftHand:
+          Value: true
+        LThighLowLeg:
+          Value: true
+        LThighUpLeg:
+          Value: true
+        LWrMot2:
+          Value: true
+        LWrMot3:
+          Value: true
+        RElb:
+          Value: true
+        RFoot:
+          Value: true
+        RFootmot:
+          Value: true
+        RForearm:
+          Value: true
+        RHipMot:
+          Value: true
+        RLowLeg:
+          Value: true
+        RShp:
+          Value: true
+        RShr:
+          Value: true
+        RShy:
+          Value: true
+        RSoftHand:
+          Value: true
+        RThighLowLeg:
+          Value: true
+        RThighUpLeg:
+          Value: true
+        RWrMot2:
+          Value: true
+        RWrMot3:
+          Value: true
+        Waist:
+          Value: true
+        base_link:
+          Value: true
+        gaze:
+          Value: true
+        imu_link:
+          Value: true
+        l_ankle:
+          Value: true
+        l_arm_ft:
+          Value: true
+        l_foot_lower_left_link:
+          Value: true
+        l_foot_lower_right_link:
+          Value: true
+        l_foot_upper_left_link:
+          Value: true
+        l_foot_upper_right_link:
+          Value: true
+        l_hand_lower_left_link:
+          Value: true
+        l_hand_lower_right_link:
+          Value: true
+        l_hand_upper_left_link:
+          Value: true
+        l_hand_upper_right_link:
+          Value: true
+        l_leg_ft:
+          Value: true
+        l_sole:
+          Value: true
+        l_toe:
+          Value: true
+        l_wrist:
+          Value: true
+        r_ankle:
+          Value: true
+        r_arm_ft:
+          Value: true
+        r_foot_lower_left_link:
+          Value: true
+        r_foot_lower_right_link:
+          Value: true
+        r_foot_upper_left_link:
+          Value: true
+        r_foot_upper_right_link:
+          Value: true
+        r_hand_lower_left_link:
+          Value: true
+        r_hand_lower_right_link:
+          Value: true
+        r_hand_upper_left_link:
+          Value: true
+        r_hand_upper_right_link:
+          Value: true
+        r_leg_ft:
+          Value: true
+        r_sole:
+          Value: true
+        r_toe:
+          Value: true
+        r_wrist:
+          Value: true
+        torso:
+          Value: true
+      Marker Scale: 0.10000000149011612
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        base_link:
+          Waist:
+            DWL:
+              DWS:
+                DWYTorso:
+                  LShp:
+                    LShr:
+                      LShy:
+                        LElb:
+                          LForearm:
+                            LWrMot2:
+                              LWrMot3:
+                                LSoftHand:
+                                  l_hand_lower_left_link:
+                                    {}
+                                  l_hand_lower_right_link:
+                                    {}
+                                  l_hand_upper_left_link:
+                                    {}
+                                  l_hand_upper_right_link:
+                                    {}
+                                l_wrist:
+                                  {}
+                            l_arm_ft:
+                              {}
+                  RShp:
+                    RShr:
+                      RShy:
+                        RElb:
+                          RForearm:
+                            RWrMot2:
+                              RWrMot3:
+                                RSoftHand:
+                                  r_hand_lower_left_link:
+                                    {}
+                                  r_hand_lower_right_link:
+                                    {}
+                                  r_hand_upper_left_link:
+                                    {}
+                                  r_hand_upper_right_link:
+                                    {}
+                                r_wrist:
+                                  {}
+                            r_arm_ft:
+                              {}
+                  torso:
+                    gaze:
+                      {}
+            LHipMot:
+              LThighUpLeg:
+                LThighLowLeg:
+                  LLowLeg:
+                    LFootmot:
+                      LFoot:
+                        l_ankle:
+                          {}
+                        l_leg_ft:
+                          {}
+                        l_sole:
+                          l_foot_lower_left_link:
+                            {}
+                          l_foot_lower_right_link:
+                            {}
+                          l_foot_upper_left_link:
+                            {}
+                          l_foot_upper_right_link:
+                            {}
+                          l_toe:
+                            {}
+            RHipMot:
+              RThighUpLeg:
+                RThighLowLeg:
+                  RLowLeg:
+                    RFootmot:
+                      RFoot:
+                        r_ankle:
+                          {}
+                        r_leg_ft:
+                          {}
+                        r_sole:
+                          r_foot_lower_left_link:
+                            {}
+                          r_foot_lower_right_link:
+                            {}
+                          r_foot_upper_left_link:
+                            {}
+                          r_foot_upper_right_link:
+                            {}
+                          r_toe:
+                            {}
+            imu_link:
+              {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: ci/world
+    Fixed Frame: r_sole
     Frame Rate: 30
   Name: root
   Tools:
@@ -400,25 +632,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.4508087635040283
+      Distance: 2.09138560295105
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: -0.12788094580173492
+        Y: 0.18692916631698608
+        Z: 0.43025508522987366
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.14539849758148193
+      Pitch: 0.30039840936660767
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.1235833168029785
+      Yaw: 0.0003924444317817688
     Saved: ~
 Window Geometry:
   Displays:
@@ -437,4 +669,4 @@ Window Geometry:
     collapsed: false
   Width: 1267
   X: 67
-  Y: 27
+  Y: 30
