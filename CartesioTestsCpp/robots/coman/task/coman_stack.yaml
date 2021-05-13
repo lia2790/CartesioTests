@@ -9,6 +9,7 @@ constraints: ["JointLimits", "VelocityLimits"]
 
 ComXY:
     type: "Com"
+    name: "com_task"
     lambda: 0.1
     indices: [0, 1]
     weight: 10

@@ -141,7 +141,7 @@ add_library(CartesioTestsManager
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 
-add_executable(CartesioTests src/CartesioTests.cpp)
+add_executable(CartesioTestsCpp src/CartesioTestsCpp.cpp)
 
 
 ## Rename C++ executable without prefix
@@ -165,7 +165,7 @@ target_link_libraries(CartesioTestsManager
    CartesioTestsHandler
 )
 
-target_link_libraries(CartesioTests
+target_link_libraries(CartesioTestsCpp
    CartesioTestsManager
 )
 
