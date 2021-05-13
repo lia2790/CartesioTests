@@ -4,6 +4,9 @@
 # ➤ CartesioTests
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="200"/>
 
+<br />
+<br />
+
 **CartesIO is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
 the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
 **ROS instruction**, providing a **robot and task description** with **[URDF](http://wiki.ros.org/urdf)** and **[SRDF files](http://wiki.ros.org/srdf)**, the software accounts for an autonomous execution of the robot control for achieving the desired goal.
