@@ -32,7 +32,7 @@ void CartesioTestsROSClientHandler::setROSClientTask(std::string task, double ga
      _task = std::dynamic_pointer_cast<CartesianTask>(clientTask);
 }
 
-void CartesioTestsROSClientHandler::setROSClientTargetTask(Eigen::Affine3d Ttgt, double target_time)
+void CartesioTestsROSClientHandler::setROSClientTaskTarget(Eigen::Affine3d Ttgt, double target_time)
 {
     // set task target
     if(_task)

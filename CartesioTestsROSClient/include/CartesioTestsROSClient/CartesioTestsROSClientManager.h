@@ -23,6 +23,7 @@
 // Eigen 
 #include <Eigen/Dense>
 #include <Eigen/Core>
+#include <Eigen/Geometry>
 
 // ROS
 #include <ros/ros.h>
@@ -49,6 +50,9 @@ class CartesioTestsROSClientManager
 	// Input Parameters ------------------------------------------------------------------------
 	// Cartesio --------------------------------------------------------------------------------
 	std::string _taskName; /* task name */
+	std::vector<double> _taskTrasl; /* task target translation */
+	std::vector<double> _taskOrient; /* task target orientation */
+	Eigen::Affine3d _taskTarget; /* task target transformation matrix */
 	double _taskGain; /* task gain */
 	double _targetTime; /* target reaching time */
 	// -----------------------------------------------------------------------------------------
@@ -99,6 +103,14 @@ class CartesioTestsROSClientManager
 	 * @return void
 	 */
 	void startControl();
+	/**
+	 * minimal representation to transform
+	 * @param taskTrasl: task translation
+	 * @param taskOrient: task orientation
+	 * @param taskTarget: returned task target
+	 * @return void
+	 */
+	void minimalRepresToTransform(std::vector<double> taskTrasl, std::vector<double> taskOrient, Eigen::Affine3d& taskTarget);
 };
 
 #endif // __CARTESIO_TESTS_ROSCLIENT_MANAGER_

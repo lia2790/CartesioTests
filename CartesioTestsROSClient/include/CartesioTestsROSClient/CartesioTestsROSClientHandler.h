@@ -61,7 +61,7 @@ public:
 	 * @param target_time: target time
 	 * @return void
 	 */
-	void setROSClientTargetTask(Eigen::Affine3d Ttgt, double target_time);
+	void setROSClientTaskTarget(Eigen::Affine3d Ttgt, double target_time);
 	/**
 	 * start control
 	 * @return void

@@ -49,15 +49,18 @@ void CartesioTestsROSClientManager::loadInputs()
 {
 	// loading inputs
 	_nh.param<std::string>("/task_name",_taskName,"taskA");
+	_nh.param<std::vector<double>>("/task_translation",_taskTrasl,{0,0,0});
+	_nh.param<std::vector<double>>("/task_orientation",_taskOrient,{0,0,0});
 	_nh.param<double>("/task_gain",_taskGain,0.5);
 	_nh.param<double>("/target_time",_targetTime,0.03);
+	minimalRepresToTransform(_taskTrasl,_taskOrient,_taskTarget);
 }
 
 void CartesioTestsROSClientManager::initCartesIOROSClient()
 {
 	// init cartesio
 	_cartesioROSClient.setROSClientTask(_taskName,_taskGain);
-	_cartesioROSClient.setROSClientTaskTargetTime(_targetTime);
+	_cartesioROSClient.setROSClientTaskTarget(_taskTarget,_targetTime);
 	_cartesioROSClient.startControl();
 }
 
@@ -87,6 +90,19 @@ void CartesioTestsROSClientManager::spin()
 	_timer.start();
 	ROS_INFO_STREAM("Cartesio Tests started looping time " << 1./_period << "Hz");
 	ros::spin();
+}
+
+void CartesioTestsROSClientManager::minimalRepresToTransform(std::vector<double> taskTrasl, std::vector<double> taskOrient, Eigen::Affine3d& taskTarget)
+{
+	// set translation
+	taskTarget.translation()[0] = taskTrasl[0];
+	taskTarget.translation()[1] = taskTrasl[1];
+	taskTarget.translation()[2] = taskTrasl[2];
+	// set orientation
+	Eigen::Quaterniond q = Eigen::AngleAxisd(taskOrient[0],Eigen::Vector3d::UnitX())*
+	    Eigen::AngleAxisd(taskOrient[1],Eigen::Vector3d::UnitY())*
+	     Eigen::AngleAxisd(taskOrient[2],Eigen::Vector3d::UnitZ()); 
+	taskTarget.linear() = q.toRotationMatrix();
 }
 
 CartesioTestsROSClientManager::~CartesioTestsROSClientManager()

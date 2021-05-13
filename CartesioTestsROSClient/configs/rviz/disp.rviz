@@ -6,11 +6,12 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1/Status1
+        - /RobotModel1
         - /Axes1
         - /TF1/Frames1
+        - /InteractiveMarkers1
       Splitter Ratio: 0.5
-    Tree Height: 549
+    Tree Height: 611
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -360,7 +361,7 @@ Visualization Manager:
           Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
-      TF Prefix: ""
+      TF Prefix: ci
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -376,133 +377,137 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        DWL:
+        ci/DWL:
           Value: true
-        DWS:
+        ci/DWS:
           Value: true
-        DWYTorso:
+        ci/DWYTorso:
           Value: true
-        LElb:
+        ci/LElb:
           Value: true
-        LFoot:
+        ci/LFoot:
           Value: true
-        LFootmot:
+        ci/LFootmot:
           Value: true
-        LForearm:
+        ci/LForearm:
           Value: true
-        LHipMot:
+        ci/LHipMot:
           Value: true
-        LLowLeg:
+        ci/LLowLeg:
           Value: true
-        LShp:
+        ci/LShp:
           Value: true
-        LShr:
+        ci/LShr:
           Value: true
-        LShy:
+        ci/LShy:
           Value: true
-        LSoftHand:
+        ci/LSoftHand:
           Value: true
-        LThighLowLeg:
+        ci/LThighLowLeg:
           Value: true
-        LThighUpLeg:
+        ci/LThighUpLeg:
           Value: true
-        LWrMot2:
+        ci/LWrMot2:
           Value: true
-        LWrMot3:
+        ci/LWrMot3:
           Value: true
-        RElb:
+        ci/RElb:
           Value: true
-        RFoot:
+        ci/RFoot:
           Value: true
-        RFootmot:
+        ci/RFootmot:
           Value: true
-        RForearm:
+        ci/RForearm:
           Value: true
-        RHipMot:
+        ci/RHipMot:
           Value: true
-        RLowLeg:
+        ci/RLowLeg:
           Value: true
-        RShp:
+        ci/RShp:
           Value: true
-        RShr:
+        ci/RShr:
           Value: true
-        RShy:
+        ci/RShy:
           Value: true
-        RSoftHand:
+        ci/RSoftHand:
           Value: true
-        RThighLowLeg:
+        ci/RThighLowLeg:
           Value: true
-        RThighUpLeg:
+        ci/RThighUpLeg:
           Value: true
-        RWrMot2:
+        ci/RWrMot2:
           Value: true
-        RWrMot3:
+        ci/RWrMot3:
           Value: true
-        Waist:
+        ci/Waist:
           Value: true
-        base_link:
+        ci/base_link:
           Value: true
-        gaze:
+        ci/com:
           Value: true
-        imu_link:
+        ci/gaze:
           Value: true
-        l_ankle:
+        ci/imu_link:
           Value: true
-        l_arm_ft:
+        ci/l_ankle:
           Value: true
-        l_foot_lower_left_link:
+        ci/l_arm_ft:
           Value: true
-        l_foot_lower_right_link:
+        ci/l_foot_lower_left_link:
           Value: true
-        l_foot_upper_left_link:
+        ci/l_foot_lower_right_link:
           Value: true
-        l_foot_upper_right_link:
+        ci/l_foot_upper_left_link:
           Value: true
-        l_hand_lower_left_link:
+        ci/l_foot_upper_right_link:
           Value: true
-        l_hand_lower_right_link:
+        ci/l_hand_lower_left_link:
           Value: true
-        l_hand_upper_left_link:
+        ci/l_hand_lower_right_link:
           Value: true
-        l_hand_upper_right_link:
+        ci/l_hand_upper_left_link:
           Value: true
-        l_leg_ft:
+        ci/l_hand_upper_right_link:
           Value: true
-        l_sole:
+        ci/l_leg_ft:
           Value: true
-        l_toe:
+        ci/l_sole:
           Value: true
-        l_wrist:
+        ci/l_toe:
           Value: true
-        r_ankle:
+        ci/l_wrist:
           Value: true
-        r_arm_ft:
+        ci/r_ankle:
           Value: true
-        r_foot_lower_left_link:
+        ci/r_arm_ft:
           Value: true
-        r_foot_lower_right_link:
+        ci/r_foot_lower_left_link:
           Value: true
-        r_foot_upper_left_link:
+        ci/r_foot_lower_right_link:
           Value: true
-        r_foot_upper_right_link:
+        ci/r_foot_upper_left_link:
           Value: true
-        r_hand_lower_left_link:
+        ci/r_foot_upper_right_link:
           Value: true
-        r_hand_lower_right_link:
+        ci/r_hand_lower_left_link:
           Value: true
-        r_hand_upper_left_link:
+        ci/r_hand_lower_right_link:
           Value: true
-        r_hand_upper_right_link:
+        ci/r_hand_upper_left_link:
           Value: true
-        r_leg_ft:
+        ci/r_hand_upper_right_link:
           Value: true
-        r_sole:
+        ci/r_leg_ft:
           Value: true
-        r_toe:
+        ci/r_sole:
           Value: true
-        r_wrist:
+        ci/r_toe:
           Value: true
-        torso:
+        ci/r_wrist:
+          Value: true
+        ci/torso:
+          Value: true
+        ci/world:
           Value: true
       Marker Scale: 0.10000000149011612
       Name: TF
@@ -510,105 +515,117 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          Waist:
-            DWL:
-              DWS:
-                DWYTorso:
-                  LShp:
-                    LShr:
-                      LShy:
-                        LElb:
-                          LForearm:
-                            LWrMot2:
-                              LWrMot3:
-                                LSoftHand:
-                                  l_hand_lower_left_link:
+        ci/world:
+          ci/base_link:
+            ci/Waist:
+              ci/DWL:
+                ci/DWS:
+                  ci/DWYTorso:
+                    ci/LShp:
+                      ci/LShr:
+                        ci/LShy:
+                          ci/LElb:
+                            ci/LForearm:
+                              ci/LWrMot2:
+                                ci/LWrMot3:
+                                  ci/LSoftHand:
+                                    ci/l_hand_lower_left_link:
+                                      {}
+                                    ci/l_hand_lower_right_link:
+                                      {}
+                                    ci/l_hand_upper_left_link:
+                                      {}
+                                    ci/l_hand_upper_right_link:
+                                      {}
+                                  ci/l_wrist:
                                     {}
-                                  l_hand_lower_right_link:
+                              ci/l_arm_ft:
+                                {}
+                    ci/RShp:
+                      ci/RShr:
+                        ci/RShy:
+                          ci/RElb:
+                            ci/RForearm:
+                              ci/RWrMot2:
+                                ci/RWrMot3:
+                                  ci/RSoftHand:
+                                    ci/r_hand_lower_left_link:
+                                      {}
+                                    ci/r_hand_lower_right_link:
+                                      {}
+                                    ci/r_hand_upper_left_link:
+                                      {}
+                                    ci/r_hand_upper_right_link:
+                                      {}
+                                  ci/r_wrist:
                                     {}
-                                  l_hand_upper_left_link:
-                                    {}
-                                  l_hand_upper_right_link:
-                                    {}
-                                l_wrist:
-                                  {}
-                            l_arm_ft:
+                              ci/r_arm_ft:
+                                {}
+                    ci/torso:
+                      ci/gaze:
+                        {}
+              ci/LHipMot:
+                ci/LThighUpLeg:
+                  ci/LThighLowLeg:
+                    ci/LLowLeg:
+                      ci/LFootmot:
+                        ci/LFoot:
+                          ci/l_ankle:
+                            {}
+                          ci/l_leg_ft:
+                            {}
+                          ci/l_sole:
+                            ci/l_foot_lower_left_link:
                               {}
-                  RShp:
-                    RShr:
-                      RShy:
-                        RElb:
-                          RForearm:
-                            RWrMot2:
-                              RWrMot3:
-                                RSoftHand:
-                                  r_hand_lower_left_link:
-                                    {}
-                                  r_hand_lower_right_link:
-                                    {}
-                                  r_hand_upper_left_link:
-                                    {}
-                                  r_hand_upper_right_link:
-                                    {}
-                                r_wrist:
-                                  {}
-                            r_arm_ft:
+                            ci/l_foot_lower_right_link:
                               {}
-                  torso:
-                    gaze:
-                      {}
-            LHipMot:
-              LThighUpLeg:
-                LThighLowLeg:
-                  LLowLeg:
-                    LFootmot:
-                      LFoot:
-                        l_ankle:
-                          {}
-                        l_leg_ft:
-                          {}
-                        l_sole:
-                          l_foot_lower_left_link:
+                            ci/l_foot_upper_left_link:
+                              {}
+                            ci/l_foot_upper_right_link:
+                              {}
+                            ci/l_toe:
+                              {}
+              ci/RHipMot:
+                ci/RThighUpLeg:
+                  ci/RThighLowLeg:
+                    ci/RLowLeg:
+                      ci/RFootmot:
+                        ci/RFoot:
+                          ci/r_ankle:
                             {}
-                          l_foot_lower_right_link:
+                          ci/r_leg_ft:
                             {}
-                          l_foot_upper_left_link:
-                            {}
-                          l_foot_upper_right_link:
-                            {}
-                          l_toe:
-                            {}
-            RHipMot:
-              RThighUpLeg:
-                RThighLowLeg:
-                  RLowLeg:
-                    RFootmot:
-                      RFoot:
-                        r_ankle:
-                          {}
-                        r_leg_ft:
-                          {}
-                        r_sole:
-                          r_foot_lower_left_link:
-                            {}
-                          r_foot_lower_right_link:
-                            {}
-                          r_foot_upper_left_link:
-                            {}
-                          r_foot_upper_right_link:
-                            {}
-                          r_toe:
-                            {}
-            imu_link:
-              {}
+                          ci/r_sole:
+                            ci/r_foot_lower_left_link:
+                              {}
+                            ci/r_foot_lower_right_link:
+                              {}
+                            ci/r_foot_upper_left_link:
+                              {}
+                            ci/r_foot_upper_right_link:
+                              {}
+                            ci/r_toe:
+                              {}
+              ci/imu_link:
+                {}
+          ci/com:
+            {}
       Update Interval: 0
+      Value: true
+    - Class: rviz/InteractiveMarkers
+      Enable Transparency: true
+      Enabled: true
+      Name: InteractiveMarkers
+      Show Axes: false
+      Show Descriptions: true
+      Show Visual Aids: false
+      Update Topic: /Com_cartesian_marker_server/update
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: r_sole
+    Fixed Frame: ci/world
     Frame Rate: 30
   Name: root
   Tools:
@@ -632,33 +649,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.09138560295105
+      Distance: 3.243447780609131
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.12788094580173492
-        Y: 0.18692916631698608
-        Z: 0.43025508522987366
+        X: -0.10960518568754196
+        Y: 0.2874109745025635
+        Z: 0.3063279390335083
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.30039840936660767
+      Pitch: 0.040398407727479935
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.0003924444317817688
+      Yaw: 6.1785783767700195
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 846
+  Height: 908
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000002b0fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002b0000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004f30000003efc0100000002fb0000000800540069006d00650100000000000004f3000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000282000002b000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000156000002eefc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002ee000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002eefc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002ee000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005870000003efc0100000002fb0000000800540069006d0065010000000000000587000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000316000002ee00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -667,6 +684,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1267
-  X: 67
-  Y: 30
+  Width: 1415
+  X: 505
+  Y: 106

@@ -1,3 +1,5 @@
-task_name: "arm1_8"
+task_name: "com_task"
+task_translation: [0.0, 0.2, 0.0]
+task_orientation: [0.0, 0.0, 0.0]
 task_gain: 0.5
 target_time: 5.0
