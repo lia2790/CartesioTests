@@ -2,7 +2,7 @@
 <img align="right" src="https://user-images.githubusercontent.com/15608027/118106879-62679800-b3de-11eb-845b-666ac6ad77c9.png" width="500"/>
 
 # ➤ CartesioTests
-<img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="330"/>
+<img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="300"/>
 
 **CartesIO is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
 the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
