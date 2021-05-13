@@ -1,11 +1,15 @@
-# ➤ CartesioTests
-<img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
 
-**Cartesio is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
+<img align="right" src="https://user-images.githubusercontent.com/15608027/118106879-62679800-b3de-11eb-845b-666ac6ad77c9.png" width="600"/>
+
+# ➤ CartesioTests
+<img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="330"/>
+
+**CartesIO is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
 the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
-**ROS instruction**, providing a **robot and task description** with **[URDF](http://wiki.ros.org/urdf)** and **[SRDF files](http://wiki.ros.org/srdf)**, the software accounts for an autonomous execution of the robot control 
-for achieving the desired goal. The **CartesioTests Repository** basically constitutes a **Cartesio Wrapper**. Specifing the robot and the robot target, the CartesioTests
+**ROS instruction**, providing a **robot and task description** with **[URDF](http://wiki.ros.org/urdf)** and **[SRDF files](http://wiki.ros.org/srdf)**, the software accounts for an autonomous execution of the robot control for achieving the desired goal.
+The **CartesioTests Repository** basically constitutes a **Cartesio Wrapper**. Specifing the robot and the robot target, the CartesioTests
 executes all CartesIO routines for **achieving the desired target hiding them to the user** which should **only specify** the **required inputs** and **execute ROS node**.
+
 
 ## ➤ Table of Contents
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
@@ -28,7 +32,7 @@ inside the _**src folder**_ of a [catkin'](http://wiki.ros.org/catkin/Tutorials/
 ## ➤ Execution
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
 
-**To Execute** CartesioTests run 
+**To Execute** CartesioTests ru
 
 ```c++
 roslaunch cartesio_tests CartesioTests.launch
