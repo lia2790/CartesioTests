@@ -15,12 +15,11 @@
  * limitations under the License.
 */
 
-#ifndef __CARTESIO_TESTS_HANDLER_
-#define __CARTESIO_TESTS_HANDLER_
+#ifndef __CARTESIO_TESTS_ROSCLIENT_HANDLER_
+#define __CARTESIO_TESTS_ROSCLIENT_HANDLER_
 
 // CartesIO
-#include <cartesian_interface/CartesianInterfaceImpl.h>
-#include <thread>
+#include <cartesian_interface/ros/ROSClient.h>
 
 // Eigen 
 #include <Eigen/Dense>
@@ -31,86 +30,48 @@ using namespace XBot::Cartesian;
  * @brief Class Variable Impedance Robot
  * 
  */
-class CartesioTestsHandler
+class CartesioTestsROSClientHandler
 {	
-	// CartesioTestsHandler ------------------------------------------------------------------
-	XBot::ConfigOptions _xbot_cfg; /* cartesio configuration */
-	XBot::ModelInterface::Ptr _model; /* robot model */
-	CartesianTask::Ptr _task; /* task */
-	CartesianInterfaceImpl::Ptr _solver; /* cartesian interface solver */
-	double _dt; /* period */
+	// CartesioTestsROSClientHandler ------------------------------------------------------------------
+	RosClient _client; /* ros client */
+	CartesianTask::Ptr _task; /* cartesian task */
+	double _sleepdt = 0.1; /* period */
+	// ------------------------------------------------------------------------------------------------
 
 public:
 	/////////////// COSTRUCTOR ////////////////////
 	/* costructor of the class */
-	CartesioTestsHandler();
+	CartesioTestsROSClientHandler();
 	/**
-	 * init robot
-	 * @param URDF_PATH: robot urdf path
-	 * @param SRDF_PATH: robot srdf path
-	 * @param isFloating: is floating robot
-	 * @param modelType: robot model type
+	 * set ros client task
+	 * @param task: task name
+	 * @param gain: task gain
 	 * @return void
 	 */
-	void init(std::string URDF_PATH, std::string SRDF_PATH, bool isFloating, std::string modelType);
-	/**
-	 * set model
-	 * @return void
-	 */
-	void setModel();
-	/**
-	 * set problem
-	 * @param TASK_PATH: problem description (task) path
-	 * @return void
-	 */
-	void setProblem(std::string TASK_PATH, std::string solverType);
-	/**
-	 * set task
-	 * @param taskName: task name
-	 * @return void
-	 */
-	void setTask(std::string taskName);
+	void setROSClientTask(std::string task, double gain);
 	/**
 	 * set task target time
 	 * @param target_time: target time
 	 * @return void
 	 */
-	void setTaskTargetTime(double target_time);
+	void setROSClientTaskTargetTime(double target_time);
 	/**
 	 * set task target time
-	 * @param Tref: reference transformation
+	 * @param Ttgt: target transformation
 	 * @param target_time: target time
 	 * @return void
 	 */
-	void setTaskTarget(Eigen::Affine3d Tref, double target_time);
+	void setROSClientTargetTask(Eigen::Affine3d Ttgt, double target_time);
 	/**
 	 * start control
 	 * @return void
 	 */
 	void startControl();
-
 	
 	/////////////// DISTRUCTOR ////////////////////
 	/* distructor of the class */
-	~CartesioTestsHandler();
-
-private:
-	/**
-	 * set home
-	 * @return void
-	 */
-	void homing();
-	/**
-	 * control robot: compute the control law and update the state
-	 * @return void
-	 */
-	void control();
-	/**
-	 * return joint position norm
-	 * @return joint position norm
-	 */
-	double precision();
-
+	~CartesioTestsROSClientHandler();
+	
 };
 
-#endif // __CARTESIO_TESTS_HANDLER_
+#endif // __CARTESIO_TESTS_ROSCLIENT_HANDLER_
