@@ -27,7 +27,7 @@
 
 using namespace XBot::Cartesian;
 /**
- * @brief Class Variable Impedance Robot
+ * @brief Class Class Cartesio Tests ROS Client Handler
  * 
  */
 class CartesioTestsROSClientHandler
@@ -71,7 +71,7 @@ public:
 	/////////////// DISTRUCTOR ////////////////////
 	/* distructor of the class */
 	~CartesioTestsROSClientHandler();
-	
+
 };
 
 #endif // __CARTESIO_TESTS_ROSCLIENT_HANDLER_

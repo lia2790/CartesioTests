@@ -15,10 +15,10 @@
  * limitations under the License.
 */
 
-#ifndef __CARTESIO_TESTS_MANAGER_
-#define __CARTESIO_TESTS_MANAGER_
+#ifndef __CARTESIO_TESTS_ROSCLIENT_MANAGER_
+#define __CARTESIO_TESTS_ROSCLIENT_MANAGER_
 
-#include <CartesioTests/CartesioTestsHandler.h>
+#include <CartesioTestsROSClient/CartesioTestsROSClientHandler.h>
 
 // Eigen 
 #include <Eigen/Dense>
@@ -28,10 +28,10 @@
 #include <ros/ros.h>
 
 /**
- * @brief Class Cartesio Tests Manager
+ * @brief Class Cartesio Tests ROS Client Manager
  * 
  */
-class CartesioTestsManager
+class CartesioTestsROSClientManager
 {
 	// ROS Node --------------------------------------------------------------------------------
 	ros::NodeHandle _nh; /* ROSE node handle */
@@ -43,23 +43,17 @@ class CartesioTestsManager
 	// -----------------------------------------------------------------------------------------
 
 	// CartesioTestsManager --------------------------------------------------------------------
-	CartesioTestsHandler _cartesio; /* cartesio */
+	CartesioTestsROSClientHandler _cartesioROSClient; /* cartesio ros client*/
 	// -----------------------------------------------------------------------------------------
 
-	// Input Parameters -------------------------------------------------------------------
-	// Cartesio -----------------------------------------------------------------------------------
-	std::string _robotUrdfPath; /* robot urdf path */
-	std::string _robotSrdfPath; /* robot srdf path */
-	std::string _robotModelType; /* robot model type */
-	std::string _taskPath; /* task definition path */
+	// Input Parameters ------------------------------------------------------------------------
+	// Cartesio --------------------------------------------------------------------------------
 	std::string _taskName; /* task name */
-	std::string _solverType; /* cartesio solver type */
-	bool _robotIsFloating; /* is a floating robot (true-false) */
+	double _taskGain; /* task gain */
 	double _targetTime; /* target reaching time */
 	// -----------------------------------------------------------------------------------------
 
-	// Functions -------------------------------------------------------------------------------
-public:
+	public:
 	/////////////// COSTRUCTOR ////////////////////
 	/* costructor of the class */
 	CartesioTestsManager( std::string ns = "" );
@@ -94,7 +88,7 @@ public:
 	 * init cartesio
 	 * @return void
 	 */
-	void initCartesIO();
+	void initCartesIOROSClient();
 	/**
 	 * set new task reference
 	 * @return true if a new reference received otherwise false
@@ -107,4 +101,4 @@ public:
 	void startControl();
 };
 
-#endif // __CARTESIO_TESTS_MANAGER_
+#endif // __CARTESIO_TESTS_ROSCLIENT_MANAGER_
