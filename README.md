@@ -6,6 +6,8 @@
 
 <br />
 <br />
+<br />
+<br />
 
 **CartesIO is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
 the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
