@@ -99,9 +99,12 @@ void CartesioTestsROSClientManager::minimalRepresToTransform(std::vector<double>
 	taskTarget.translation()[1] = taskTrasl[1];
 	taskTarget.translation()[2] = taskTrasl[2];
 	// set orientation
-	Eigen::Quaterniond q = Eigen::AngleAxisd(taskOrient[0],Eigen::Vector3d::UnitX())*
+	taskOrient[0] = taskOrient[0]*(M_PI/180);
+	taskOrient[1] = taskOrient[1]*(M_PI/180);
+	taskOrient[2] = taskOrient[2]*(M_PI/180);
+	Eigen::Quaternion<double> q = Eigen::AngleAxisd(taskOrient[2],Eigen::Vector3d::UnitZ())*
 	    Eigen::AngleAxisd(taskOrient[1],Eigen::Vector3d::UnitY())*
-	     Eigen::AngleAxisd(taskOrient[2],Eigen::Vector3d::UnitZ()); 
+	     Eigen::AngleAxisd(taskOrient[0],Eigen::Vector3d::UnitX()); 
 	taskTarget.linear() = q.toRotationMatrix();
 }
 
