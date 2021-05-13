@@ -30,7 +30,7 @@ CartesioTestsROSClientManager::CartesioTestsROSClientManager ( std::string ns ) 
 
 	//initialization ROS node
 	ROS_INFO_STREAM ("I am initializing CartesIO ROSClient...");
-	initCartesIOROSClientROSClient();
+	initCartesIOROSClient();
 
 	//initialization done
 	ROS_INFO_STREAM ("Initialization done.");

@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-#include <CartesioTests/CartesioTestsHandler.h>
+#include <CartesioTestsCpp/CartesioTestsHandler.h>
 
 CartesioTestsHandler::CartesioTestsHandler()
 {

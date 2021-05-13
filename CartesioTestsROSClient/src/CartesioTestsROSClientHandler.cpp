@@ -27,7 +27,7 @@ void CartesioTestsROSClientHandler::setROSClientTask(std::string task, double ga
 	// ..get task
     auto clientTask = _client.getTask(task);
     // ..set task gain
-    clientTask.setLambda(gain);
+    clientTask->setLambda(gain);
     // ..get cartesian task
      _task = std::dynamic_pointer_cast<CartesianTask>(clientTask);
 }

@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-#include <CartesioTests/CartesioTestsManager.h>
+#include <CartesioTestsCpp/CartesioTestsManager.h>
 
 
 CartesioTestsManager::CartesioTestsManager ( std::string ns ) : _nh ( ns )

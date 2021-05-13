@@ -16,7 +16,7 @@
 */
 
 #include <ros/ros.h>
-#include <CartesioTests/CartesioTestsManager.h>
+#include <CartesioTestsCpp/CartesioTestsManager.h>
 
 int main(int argc, char **argv)
 {

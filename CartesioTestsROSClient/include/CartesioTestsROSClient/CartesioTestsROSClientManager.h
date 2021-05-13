@@ -42,7 +42,7 @@ class CartesioTestsROSClientManager
 	double _gravity = 9.8; /* gravity */
 	// -----------------------------------------------------------------------------------------
 
-	// CartesioTestsManager --------------------------------------------------------------------
+	// CartesioTestsROSClientManager --------------------------------------------------------------------
 	CartesioTestsROSClientHandler _cartesioROSClient; /* cartesio ros client*/
 	// -----------------------------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ class CartesioTestsROSClientManager
 	public:
 	/////////////// COSTRUCTOR ////////////////////
 	/* costructor of the class */
-	CartesioTestsManager( std::string ns = "" );
+	CartesioTestsROSClientManager( std::string ns = "" );
 	/**
 	 * callback of the ROS Node 
 	 * @param timer: timer event for the ROS node
@@ -71,7 +71,7 @@ class CartesioTestsROSClientManager
 
 	/////////////// DISTRUCTOR ////////////////////
 	/* distructor of the class */
-	~CartesioTestsManager();
+	~CartesioTestsROSClientManager();
 
 	private:
 	/**

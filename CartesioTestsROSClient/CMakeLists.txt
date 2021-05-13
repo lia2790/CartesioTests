@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(cartesio_tests_rosclient)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -155,14 +155,14 @@ add_executable(CartesioTestsROSClient src/CartesioTestsROSClient.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(CartesioTestsHandlerROSClient
+target_link_libraries(CartesioTestsROSClientHandler
    ${catkin_LIBRARIES}
    ${cartesian_interface_LIBRARIES}
 )
 
-target_link_libraries(CartesioTestsManagerROSClient
+target_link_libraries(CartesioTestsROSClientManager
    ${catkin_LIBRARIES}
-   CartesioTestsHandler
+   CartesioTestsROSClientHandler
 )
 
 target_link_libraries(CartesioTestsROSClient

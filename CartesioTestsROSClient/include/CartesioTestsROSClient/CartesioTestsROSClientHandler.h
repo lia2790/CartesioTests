@@ -19,7 +19,7 @@
 #define __CARTESIO_TESTS_ROSCLIENT_HANDLER_
 
 // CartesIO
-#include <cartesian_interface/ros/ROSClient.h>
+#include <cartesian_interface/ros/RosClient.h>
 
 // Eigen 
 #include <Eigen/Dense>

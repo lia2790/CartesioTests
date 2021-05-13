@@ -18,7 +18,7 @@
 #ifndef __CARTESIO_TESTS_MANAGER_
 #define __CARTESIO_TESTS_MANAGER_
 
-#include <CartesioTests/CartesioTestsHandler.h>
+#include <CartesioTestsCpp/CartesioTestsHandler.h>
 
 // Eigen 
 #include <Eigen/Dense>
