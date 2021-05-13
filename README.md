@@ -9,6 +9,7 @@
 <br />
 <br />
 <br />
+<br />
 
 **CartesIO is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
 the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
@@ -33,16 +34,26 @@ executes all CartesIO routines for **achieving the desired target hiding them to
 ```c++
 git clone https://github.com/lia2790/CartesioTests.git
 ```
-inside the _**src folder**_ of a [catkin'](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) workspace and that is it.
+inside the _**src folder**_ of a [catkin' workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) and that is it.
 
 ## ➤ Execution
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
 
-**To Execute** CartesioTests ru
+**To Execute the examples in the packages**, run
 
+- **CartesioTestsCpp**
 ```c++
-roslaunch cartesio_tests CartesioTests.launch
+roslaunch cartesio_tests_cpp CartesioTestsCpp.launch
 ```
+- **CartesioTestsQuickStart**
+```c++
+roslaunch cartesio_tests_quickstart CartesioTestsQuickStart.launch
+```
+- **CartesioTestsROSClient**
+```c++
+roslaunch cartesio_tests_rosclient CartesioTestsROSClient.launch
+```
+respectively!
 
 ## ➤ Dependences
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
