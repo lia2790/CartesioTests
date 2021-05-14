@@ -1,5 +1,5 @@
 task_name: "com_task"
 task_translation: [0.0, 1.0, 0.0]
-task_orientation: [0.0, 0.0, 90.0]
+task_orientation: [0.0, 0.0, 0.0]
 task_gain: 0.5
 target_time: 5.0

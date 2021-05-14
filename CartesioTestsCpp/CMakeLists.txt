@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## System dependencies are found with CMake's conventions
 find_package(Eigen3 REQUIRED)
 find_package(cartesian_interface REQUIRED)
+find_package(XBotInterface REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures

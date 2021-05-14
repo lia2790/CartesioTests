@@ -32,15 +32,24 @@ void CartesioTestsHandler::init(std::string URDF_PATH, std::string SRDF_PATH, bo
     // some additional parameters..
     _xbot_cfg.set_parameter("is_model_floating_base", isFloating);
     _xbot_cfg.set_parameter<std::string>("model_type", modelType);
+    // default init
     _dt = 0.01;
+    _target = Eigen::Affine3d::Identity();
+    _targetTime = 1.0;
 }
 
 void CartesioTestsHandler::setModel()
 {
-    // model class
+    // set model
     _model = XBot::ModelInterface::getModel(_xbot_cfg);
     // homing
     homing();
+}
+
+void CartesioTestsHandler::setRobot()
+{
+    // returns a shared pointer to a robot object
+    _robot = XBot::RobotInterface::getRobot(XBot::Utils::getXBotConfig());
 }
 
 void CartesioTestsHandler::setProblem(std::string TASK_PATH, std::string solverType)
@@ -69,19 +78,20 @@ void CartesioTestsHandler::setTaskTargetTime(double target_time)
     // set reference
     Eigen::Affine3d Tref;
     _task->getPoseReference(Tref);
-    Tref.translation()[1] += 5.0;
+    Tref.translation()[1] += 1.0;
     setTaskTarget(Tref, target_time);
 }
 
 void CartesioTestsHandler::setTaskTarget(Eigen::Affine3d Tref, double target_time)
 {
     // set task target
-    _task->setPoseTarget(Tref, target_time);
+    _target = Tref;
+    _targetTime = target_time;
 }
 
 void CartesioTestsHandler::control()
 {
-    // control robot
+    // control law robot
     Eigen::VectorXd q, qdot, qddot;
     _model->getJointPosition(q);
     _model->getJointVelocity(qdot);
@@ -93,6 +103,16 @@ void CartesioTestsHandler::control()
     _model->setJointPosition(q);
     _model->setJointVelocity(qdot);
     _model->update();
+
+    // move robot
+    Eigen::VectorXd qr, qdotr;
+    _robot->setReferenceFrom(*_model);
+    _robot->getPositionReference(qr);
+    _robot->getVelocityReference(qdotr);
+        
+    _robot->setPositionReference(qr);
+    _robot->setVelocityReference(qdotr);
+    _robot->move();
 }
 
 double CartesioTestsHandler::precision()
@@ -104,44 +124,42 @@ double CartesioTestsHandler::precision()
 
 void CartesioTestsHandler::startControl()
 {
-    int current_state = 1;
+    int current_state = 0;
     double time = 0;
     while(true)
     {
-        if(_task->getTaskState() == State::Reaching)
+        if(current_state == 0) // here we command a reaching motion
         {
-            std::cout << "Motion started!" << std::endl;
+            std::cout << "Commanding..." << std::endl;
+            _task->setPoseTarget(_target, _targetTime);
             current_state++;
         }
-
-        if(current_state == 2) // here we wait for it to be completed
-        {
-            if(_task->getTaskState() == State::Online)
+        if(current_state == 1)
+        {   if(_task->getTaskState() == State::Reaching)
             {
-                Eigen::Affine3d T;
-                _task->getCurrentPose(T);
-                Eigen::Affine3d Tref;
-                _task->getPoseReference(Tref);
-
-                std::cout << "Motion completed, final error is " <<
-                              (T.inverse()*Tref).translation().norm() << std::endl;
-
+                std::cout << "Motion started!" << std::endl;
                 current_state++;
             }
         }
-
+        if(current_state == 2) // here we wait for it to be completed
+        {   if(_task->getTaskState() == State::Online)
+            {
+                Eigen::Affine3d T;
+                _task->getCurrentPose(T);
+                std::cout << "Motion completed! final error is " <<(T.inverse()*_target).translation().norm() << std::endl;
+                current_state++;
+            }
+        }
         if(current_state == 3) // here we wait the robot to come to a stop
         {
             std::cout << "qdot norm is " << precision() << std::endl;
-            if( precision() < 1e-3)
+            if(precision() < 1e-3)
             {
                 std::cout << "Robot came to a stop, press ENTER to exit.. \n";
                 std::cin.ignore();
                 current_state++;
             }
-
         }
-
         if(current_state == 4) break;
 
         // update and integrate model state

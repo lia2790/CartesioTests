@@ -20,6 +20,7 @@
 
 // CartesIO
 #include <cartesian_interface/CartesianInterfaceImpl.h>
+#include <XBotInterface/RobotInterface.h>
 #include <thread>
 
 // Eigen 
@@ -28,7 +29,7 @@
 
 using namespace XBot::Cartesian;
 /**
- * @brief Class Variable Impedance Robot
+ * @brief Class Cartesio Tests Handler
  * 
  */
 class CartesioTestsHandler
@@ -36,9 +37,16 @@ class CartesioTestsHandler
 	// CartesioTestsHandler ------------------------------------------------------------------
 	XBot::ConfigOptions _xbot_cfg; /* cartesio configuration */
 	XBot::ModelInterface::Ptr _model; /* robot model */
+	XBot::RobotInterface::Ptr _robot; /* robot */
 	CartesianTask::Ptr _task; /* task */
 	CartesianInterfaceImpl::Ptr _solver; /* cartesian interface solver */
 	double _dt; /* period */
+	// ---------------------------------------------------------------------------------------
+
+	// Internal Data -------------------------------------------------------------------------
+	Eigen::Affine3d _target; /* task target */
+	double _targetTime; /* target time */
+	// ---------------------------------------------------------------------------------------
 
 public:
 	/////////////// COSTRUCTOR ////////////////////
@@ -58,6 +66,11 @@ public:
 	 * @return void
 	 */
 	void setModel();
+	/**
+	 * set robot
+	 * @return void
+	 */
+	void setRobot();
 	/**
 	 * set problem
 	 * @param TASK_PATH: problem description (task) path

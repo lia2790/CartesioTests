@@ -1,0 +1,7 @@
+XBotInterface:
+  urdf_path: $(rospack find cartesio_tests_cpp)/robots/coman/urdf/coman.urdf
+  srdf_path: $(rospack find cartesio_tests_cpp)/robots/coman/srdf/coman.srdf
+
+ModelInterface:
+  model_type: "RBDL"
+  is_model_floating_base: "true"

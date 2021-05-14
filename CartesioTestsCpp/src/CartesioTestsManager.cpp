@@ -60,9 +60,10 @@ void CartesioTestsManager::loadInputs()
 
 void CartesioTestsManager::initCartesIO()
 {
-	// init cartesio
+	// init cartesio (settings)
 	_cartesio.init(_robotUrdfPath,_robotSrdfPath,_robotIsFloating,_robotModelType);
 	_cartesio.setModel();
+	_cartesio.setRobot();
 	_cartesio.setProblem(_taskPath,_solverType);
 	_cartesio.setTask(_taskName);
 	_cartesio.setTaskTargetTime(_targetTime);
