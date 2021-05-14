@@ -11,12 +11,15 @@
 <br />
 <br />
 
-**CartesIO is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The main features regards 
-the possibility of handling **multi tasks execution** enabling **different levels of priorities** while satisfying constraints. The software archicteture is build on 
-**ROS instruction**, providing a **robot and task description** with **[URDF](http://wiki.ros.org/urdf)** and **[SRDF files](http://wiki.ros.org/srdf)**, the software accounts for an autonomous execution of the robot control for achieving the desired goal.
-The **CartesioTests Repository** basically constitutes a **Cartesio Wrapper**. Specifing the robot and the robot target, the CartesioTests
-executes all CartesIO routines for **achieving the desired target hiding them to the user** which should **only specify** the **required inputs** and **execute ROS node**.
+**[CartesIO](https://advrhumanoids.github.io/CartesianInterface/) is a Cartesian Control Framework** with focus on **online control** of multi-chained, hyper-redundant floating-base robots. The software archicteture is mainly built on 
+**ROS instruction**, providing a **robot and task description** with **[URDF](http://wiki.ros.org/urdf)**/**[SRDF](http://wiki.ros.org/srdf)** and **[YAML files](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)**. 
+The **CartesioTests Repository** basically constitutes a **Cartesio Wrapper** of the _C++ Examples_ of the _Cartesio's Documentation_. Here, you can directly execute 
+it and you can modify it just tuning some input parameters. **Here, you can find three main _sub_ packages**
+- **[CartesioTestsCpp](https://github.com/lia2790/CartesioTests/tree/main/CartesioTestsCpp)**
+- **[CartesioTestsQuickStart](https://github.com/lia2790/CartesioTests/tree/main/CartesioTestsQuickStart)**
+- **[CartesioTestsROSClient](https://github.com/lia2790/CartesioTests/tree/main/CartesioTestsROSClient)**
 
+which each one implements one _C++ Example_ of _Cartesio's Documentation_. _**Download the Repo to have all the examples ready to use!**_
 
 ## ➤ Table of Contents
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
@@ -46,6 +49,7 @@ inside the _**src folder**_ of a [catkin' workspace](http://wiki.ros.org/catkin/
 roslaunch cartesio_tests_cpp CartesioTestsCpp.launch
 ```
 - **CartesioTestsQuickStart**
+- 
 ```c++
 roslaunch cartesio_tests_quickstart CartesioTestsQuickStart.launch
 ```
