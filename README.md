@@ -49,7 +49,7 @@ inside the _**src folder**_ of a [catkin' workspace](http://wiki.ros.org/catkin/
 roslaunch cartesio_tests_cpp CartesioTestsCpp.launch
 ```
 - **CartesioTestsQuickStart**
-- 
+
 ```c++
 roslaunch cartesio_tests_quickstart CartesioTestsQuickStart.launch
 ```
