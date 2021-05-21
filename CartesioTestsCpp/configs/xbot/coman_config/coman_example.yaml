@@ -1,10 +1,10 @@
 XBotCore:
-  config_path: "robots/iit-coman-ros-pkg/coman_config/coman.yaml"
+  config_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/configs/xbot/coman_config/coman.yaml"
 
 XBotInterface:
-  urdf_path: "robots/iit-coman-ros-pkg/coman_urdf/urdf/coman.urdf"
-  srdf_path: "robots/iit-coman-ros-pkg/coman_srdf/srdf/coman.srdf"
-  joint_map_path: "robots/iit-coman-ros-pkg/coman_config/coman_joint_map.yaml"
+  urdf_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/robots/coman/urdf/coman.urdf"
+  srdf_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/robots/coman/srdf/coman.srdf"
+  joint_map_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/configs/xbot/coman_config/coman_joint_map.yaml"
 
 RobotInterface:
   framework_name: "ROS"
@@ -16,8 +16,27 @@ ModelInterface:
 MasterCommunicationInterface:
   framework_name: "ROS"
 
+# describe the robot hardware in terms of devices
+xbotcore_devices:
+
+
+# define threads to be created
+xbotcore_threads:
+    rt_slow:  {sched: fifo , prio: 60, period: 0.5, core_id: 0}
+    rt_main:  {sched: fifo , prio: 60, period: 0.001, core_id: 2}
+    nrt_main: {sched: other, prio: 0 , period: 0.005}
+
+xbotcore_plugins:
+
+    # this plugin is shipped with xbot2, and it generates the
+    # ROS api for the framework
+    # it is not designed to be real-time safe, so it must executed
+    # inside a thread with `other` priority
+    ros_io: {thread: nrt_main, type: ros_io}
+    ros_ctrl: {thread: nrt_main, type: ros_control}
+
 XBotRTPlugins:
-  plugins: ["HomingExample"] 
+  plugins: [] 
   io_plugins: []
   
 NRTPlugins:
