@@ -17,6 +17,5 @@ ComXY:
 JointLimits:
     type: "JointLimits"
 
-
 VelocityLimits:
     type: "VelocityLimits"

@@ -361,7 +361,7 @@ Visualization Manager:
           Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
-      TF Prefix: ci
+      TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -377,137 +377,135 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        ci/DWL:
+        DWL:
           Value: true
-        ci/DWS:
+        DWS:
           Value: true
-        ci/DWYTorso:
+        DWYTorso:
           Value: true
-        ci/LElb:
+        LElb:
           Value: true
-        ci/LFoot:
+        LFoot:
           Value: true
-        ci/LFootmot:
+        LFootmot:
           Value: true
-        ci/LForearm:
+        LForearm:
           Value: true
-        ci/LHipMot:
+        LHipMot:
           Value: true
-        ci/LLowLeg:
+        LLowLeg:
           Value: true
-        ci/LShp:
+        LShp:
           Value: true
-        ci/LShr:
+        LShr:
           Value: true
-        ci/LShy:
+        LShy:
           Value: true
-        ci/LSoftHand:
+        LSoftHand:
           Value: true
-        ci/LThighLowLeg:
+        LThighLowLeg:
           Value: true
-        ci/LThighUpLeg:
+        LThighUpLeg:
           Value: true
-        ci/LWrMot2:
+        LWrMot2:
           Value: true
-        ci/LWrMot3:
+        LWrMot3:
           Value: true
-        ci/RElb:
+        RElb:
           Value: true
-        ci/RFoot:
+        RFoot:
           Value: true
-        ci/RFootmot:
+        RFootmot:
           Value: true
-        ci/RForearm:
+        RForearm:
           Value: true
-        ci/RHipMot:
+        RHipMot:
           Value: true
-        ci/RLowLeg:
+        RLowLeg:
           Value: true
-        ci/RShp:
+        RShp:
           Value: true
-        ci/RShr:
+        RShr:
           Value: true
-        ci/RShy:
+        RShy:
           Value: true
-        ci/RSoftHand:
+        RSoftHand:
           Value: true
-        ci/RThighLowLeg:
+        RThighLowLeg:
           Value: true
-        ci/RThighUpLeg:
+        RThighUpLeg:
           Value: true
-        ci/RWrMot2:
+        RWrMot2:
           Value: true
-        ci/RWrMot3:
+        RWrMot3:
           Value: true
-        ci/Waist:
+        Waist:
           Value: true
-        ci/base_link:
+        base_link:
           Value: true
-        ci/com:
+        gaze:
           Value: true
-        ci/gaze:
+        imu_link:
           Value: true
-        ci/imu_link:
+        l_ankle:
           Value: true
-        ci/l_ankle:
+        l_arm_ft:
           Value: true
-        ci/l_arm_ft:
+        l_foot_lower_left_link:
           Value: true
-        ci/l_foot_lower_left_link:
+        l_foot_lower_right_link:
           Value: true
-        ci/l_foot_lower_right_link:
+        l_foot_upper_left_link:
           Value: true
-        ci/l_foot_upper_left_link:
+        l_foot_upper_right_link:
           Value: true
-        ci/l_foot_upper_right_link:
+        l_hand_lower_left_link:
           Value: true
-        ci/l_hand_lower_left_link:
+        l_hand_lower_right_link:
           Value: true
-        ci/l_hand_lower_right_link:
+        l_hand_upper_left_link:
           Value: true
-        ci/l_hand_upper_left_link:
+        l_hand_upper_right_link:
           Value: true
-        ci/l_hand_upper_right_link:
+        l_leg_ft:
           Value: true
-        ci/l_leg_ft:
+        l_sole:
           Value: true
-        ci/l_sole:
+        l_toe:
           Value: true
-        ci/l_toe:
+        l_wrist:
           Value: true
-        ci/l_wrist:
+        r_ankle:
           Value: true
-        ci/r_ankle:
+        r_arm_ft:
           Value: true
-        ci/r_arm_ft:
+        r_foot_lower_left_link:
           Value: true
-        ci/r_foot_lower_left_link:
+        r_foot_lower_right_link:
           Value: true
-        ci/r_foot_lower_right_link:
+        r_foot_upper_left_link:
           Value: true
-        ci/r_foot_upper_left_link:
+        r_foot_upper_right_link:
           Value: true
-        ci/r_foot_upper_right_link:
+        r_hand_lower_left_link:
           Value: true
-        ci/r_hand_lower_left_link:
+        r_hand_lower_right_link:
           Value: true
-        ci/r_hand_lower_right_link:
+        r_hand_upper_left_link:
           Value: true
-        ci/r_hand_upper_left_link:
+        r_hand_upper_right_link:
           Value: true
-        ci/r_hand_upper_right_link:
+        r_leg_ft:
           Value: true
-        ci/r_leg_ft:
+        r_sole:
           Value: true
-        ci/r_sole:
+        r_toe:
           Value: true
-        ci/r_toe:
+        r_wrist:
           Value: true
-        ci/r_wrist:
+        torso:
           Value: true
-        ci/torso:
-          Value: true
-        ci/world:
+        world:
           Value: true
       Marker Scale: 0.10000000149011612
       Name: TF
@@ -515,101 +513,99 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        ci/world:
-          ci/base_link:
-            ci/Waist:
-              ci/DWL:
-                ci/DWS:
-                  ci/DWYTorso:
-                    ci/LShp:
-                      ci/LShr:
-                        ci/LShy:
-                          ci/LElb:
-                            ci/LForearm:
-                              ci/LWrMot2:
-                                ci/LWrMot3:
-                                  ci/LSoftHand:
-                                    ci/l_hand_lower_left_link:
+        world:
+          base_link:
+            Waist:
+              DWL:
+                DWS:
+                  DWYTorso:
+                    LShp:
+                      LShr:
+                        LShy:
+                          LElb:
+                            LForearm:
+                              LWrMot2:
+                                LWrMot3:
+                                  LSoftHand:
+                                    l_hand_lower_left_link:
                                       {}
-                                    ci/l_hand_lower_right_link:
+                                    l_hand_lower_right_link:
                                       {}
-                                    ci/l_hand_upper_left_link:
+                                    l_hand_upper_left_link:
                                       {}
-                                    ci/l_hand_upper_right_link:
+                                    l_hand_upper_right_link:
                                       {}
-                                  ci/l_wrist:
+                                  l_wrist:
                                     {}
-                              ci/l_arm_ft:
+                              l_arm_ft:
                                 {}
-                    ci/RShp:
-                      ci/RShr:
-                        ci/RShy:
-                          ci/RElb:
-                            ci/RForearm:
-                              ci/RWrMot2:
-                                ci/RWrMot3:
-                                  ci/RSoftHand:
-                                    ci/r_hand_lower_left_link:
+                    RShp:
+                      RShr:
+                        RShy:
+                          RElb:
+                            RForearm:
+                              RWrMot2:
+                                RWrMot3:
+                                  RSoftHand:
+                                    r_hand_lower_left_link:
                                       {}
-                                    ci/r_hand_lower_right_link:
+                                    r_hand_lower_right_link:
                                       {}
-                                    ci/r_hand_upper_left_link:
+                                    r_hand_upper_left_link:
                                       {}
-                                    ci/r_hand_upper_right_link:
+                                    r_hand_upper_right_link:
                                       {}
-                                  ci/r_wrist:
+                                  r_wrist:
                                     {}
-                              ci/r_arm_ft:
+                              r_arm_ft:
                                 {}
-                    ci/torso:
-                      ci/gaze:
+                    torso:
+                      gaze:
                         {}
-              ci/LHipMot:
-                ci/LThighUpLeg:
-                  ci/LThighLowLeg:
-                    ci/LLowLeg:
-                      ci/LFootmot:
-                        ci/LFoot:
-                          ci/l_ankle:
+              LHipMot:
+                LThighUpLeg:
+                  LThighLowLeg:
+                    LLowLeg:
+                      LFootmot:
+                        LFoot:
+                          l_ankle:
                             {}
-                          ci/l_leg_ft:
+                          l_leg_ft:
                             {}
-                          ci/l_sole:
-                            ci/l_foot_lower_left_link:
+                          l_sole:
+                            l_foot_lower_left_link:
                               {}
-                            ci/l_foot_lower_right_link:
+                            l_foot_lower_right_link:
                               {}
-                            ci/l_foot_upper_left_link:
+                            l_foot_upper_left_link:
                               {}
-                            ci/l_foot_upper_right_link:
+                            l_foot_upper_right_link:
                               {}
-                            ci/l_toe:
+                            l_toe:
                               {}
-              ci/RHipMot:
-                ci/RThighUpLeg:
-                  ci/RThighLowLeg:
-                    ci/RLowLeg:
-                      ci/RFootmot:
-                        ci/RFoot:
-                          ci/r_ankle:
+              RHipMot:
+                RThighUpLeg:
+                  RThighLowLeg:
+                    RLowLeg:
+                      RFootmot:
+                        RFoot:
+                          r_ankle:
                             {}
-                          ci/r_leg_ft:
+                          r_leg_ft:
                             {}
-                          ci/r_sole:
-                            ci/r_foot_lower_left_link:
+                          r_sole:
+                            r_foot_lower_left_link:
                               {}
-                            ci/r_foot_lower_right_link:
+                            r_foot_lower_right_link:
                               {}
-                            ci/r_foot_upper_left_link:
+                            r_foot_upper_left_link:
                               {}
-                            ci/r_foot_upper_right_link:
+                            r_foot_upper_right_link:
                               {}
-                            ci/r_toe:
+                            r_toe:
                               {}
-              ci/imu_link:
+              imu_link:
                 {}
-          ci/com:
-            {}
       Update Interval: 0
       Value: true
     - Class: rviz/InteractiveMarkers
@@ -625,7 +621,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: ci/world
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:

@@ -1,5 +1,5 @@
 XBotCore:
-  config_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/configs/xbot/coman_config/coman.yaml"
+   config_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/configs/xbot/coman_config/coman.yaml"
 
 XBotInterface:
   urdf_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/robots/coman/urdf/coman.urdf"
@@ -7,22 +7,24 @@ XBotInterface:
   joint_map_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/configs/xbot/coman_config/coman_joint_map.yaml"
 
 RobotInterface:
-  framework_name: "ROS"
+   framework_name: "ROS"
 
 ModelInterface:
   model_type: "RBDL"
   is_model_floating_base: "true"
   
 MasterCommunicationInterface:
-  framework_name: "ROS"
+   framework_name: "ROS"
 
-# describe the robot hardware in terms of devices
+# hal
 xbotcore_devices:
-
+        
+    joint_master:
+        master: true  # this is a master device for 'joint'
+        thread: rt_main
 
 # define threads to be created
 xbotcore_threads:
-    rt_slow:  {sched: fifo , prio: 60, period: 0.5, core_id: 0}
     rt_main:  {sched: fifo , prio: 60, period: 0.001, core_id: 2}
     nrt_main: {sched: other, prio: 0 , period: 0.005}
 
@@ -33,22 +35,19 @@ xbotcore_plugins:
     # it is not designed to be real-time safe, so it must executed
     # inside a thread with `other` priority
     ros_io: {thread: nrt_main, type: ros_io}
-    ros_ctrl: {thread: nrt_main, type: ros_control}
+    # ros_control: {thread: nrt_main, type: ros_control}
+    # cartesio: {thread: rt_main, type: cartesio_rt}
+    tpo_control:
+        thread: nrt_main
+        type: xbot_control_main_plugin
+        params:
+            js_topic: {value: "joint_states", type: string} #topic where robot state pub will read from for rviz
+            aw_topic: {value: "wrench_commands", type: string} #topic where this plugin will read the command for wrenches
 
-XBotRTPlugins:
-  plugins: [] 
-  io_plugins: []
-  
-NRTPlugins:
-  plugins: [] 
-  
-TransmissionPlugins:
-  plugins: [] 
-  
-WebServer:
-  enable: "false"
-  address: "127.0.0.1"
-  port: "8081"
 
-SimulationOptions:
-  verbose_mode: "true"    
+# additional parameters that don't relate to any plugin 
+xbotcore_param:
+    /joint_master/tx_filter_autostart: {value: true, type: bool}
+    /joint_master/tx_filter_cutoff: {value: 2.0, type: double}
+    /xbot_internal/ros_io/call_timeout: {value: 1.0, type: chrono}
+    /rt_slow/memory_hooks: {value: true, type: bool}
