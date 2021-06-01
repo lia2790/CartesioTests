@@ -2,9 +2,9 @@
 <launch>
 
 	<!-- CartesioTestsCpp robot description -->
-	<param name="robot_description" textfile="$(find cartesio_tests_cpp)/robots/coman/urdf/coman.urdf" />
-	<param name="robot_description_semantic" textfile="$(find cartesio_tests_cpp)/robots/coman/srdf/coman.srdf" />
-	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_cpp)/robots/coman/task/coman_stack.yaml"/>
+	<param name="robot_description" textfile="$(find cartesio_tests_cpp)/robots/centauro/urdf/centauro.urdf" />
+	<param name="robot_description_semantic" textfile="$(find cartesio_tests_cpp)/robots/centauro/srdf/centauro.srdf" />
+	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_cpp)/robots/centauro/task/centauro_stack.yaml"/>
 
 	<node pkg="tf" type="static_transform_publisher" name="world_link_static_broadcaster" args="0 0 0 0 0 0 1 world base_link 10" />
 
