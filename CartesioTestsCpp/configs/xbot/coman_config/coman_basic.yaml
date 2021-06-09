@@ -26,9 +26,9 @@ xbotcore_threads:
 # plugins
 xbotcore_plugins:
 
-    # homing:
-    #     thread: rt_main
-    #     type: homing_example
+    homing:
+        thread: rt_main
+        type: homing_example
 
     ros_io: {thread: nrt_main, type: ros_io}
     ros_control: {thread: nrt_main, type: ros_control, params: {autostart: {type: bool, value: true}}}

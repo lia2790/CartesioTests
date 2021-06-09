@@ -4,5 +4,5 @@ robot_task_path: "/home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/robot
 robot_is_floating: true
 robot_model_type: "RBDL"
 solver_type: "OpenSot"
-task_name: "com_task"
+task_name: "left_hand"
 target_time: 10.0

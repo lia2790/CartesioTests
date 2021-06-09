@@ -6,16 +6,6 @@
 	<param name="robot_description_semantic" textfile="$(find cartesio_tests_cpp)/robots/coman/srdf/coman.srdf" />
 	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_cpp)/robots/coman/task/coman_stack.yaml"/>
 
-	<!-- CartesioTestsCppROSClient launch cartesian interface -->
-    <include file="$(find cartesian_interface)/launch/cartesio.launch">
-        <!-- Control frequency (Hz) -->
-        <arg name="rate" value="100.0"/>
-        <!-- Spawn RviZ interacrive markers -->
-        <arg name="markers" value="true"/>
-        <!-- Set to false for fixed base  -->
-        <arg name="is_model_floating_base" value="true"/>
-    </include>
-
 	<!-- CartesioTestsCpp load configuration file -->
 	<rosparam file="$(find cartesio_tests_cpp)/configs/CartesioTestsCpp.yaml" command="load"/>
 
@@ -23,6 +13,6 @@
 	<node pkg="cartesio_tests_cpp" type="CartesioTestsCpp" name="CartesioTestsCpp" cwd = "node" respawn="false" output="screen"/>
 
 	<!-- CartesioTestsCpp show in rviz -->
-	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find cartesio_tests_cpp)/configs/rviz/disp.rviz"/>
+	<!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find cartesio_tests_cpp)/configs/rviz/disp.rviz"/>-->
 
 </launch>

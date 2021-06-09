@@ -8,8 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /Axes1
-        - /TF1/Frames1
-        - /InteractiveMarkers1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 728
   - Class: rviz/Selection
@@ -62,274 +61,306 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
+        DWL:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        DWS:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        DWYTorso:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
+        LElb:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LFoot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LFootmot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LForearm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LHipMot:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LLowLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LShp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LShr:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LShy:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LSoftHand:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LThighLowLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LThighUpLeg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LWrMot2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        LWrMot3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Link Tree Style: Links in Alphabetic Order
-        ankle1_1:
+        RElb:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle1_2:
+        RFoot:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle1_3:
+        RFootmot:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle1_4:
+        RForearm:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle2_1:
+        RHipMot:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle2_2:
+        RLowLeg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle2_3:
+        RShp:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ankle2_4:
+        RShr:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_1:
+        RShy:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_2:
+        RSoftHand:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_3:
+        RThighLowLeg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_4:
+        RThighUpLeg:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_5:
+        RWrMot2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_6:
+        RWrMot3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_7:
+        Waist:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        arm1_8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        arm2_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        arm2_8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ball1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ball1_tip:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        ball2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ball2_tip:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        ft_arm1:
+        gaze:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        ft_arm2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        hip1_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip1_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip1_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip1_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip2_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip2_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip2_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hip2_4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        knee_1:
+          Value: true
+        l_ankle:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        knee_2:
+        l_arm_ft:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        knee_3:
+        l_foot_lower_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        knee_4:
+        l_foot_lower_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        neck_1:
+        l_foot_upper_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        neck_2:
+        l_foot_upper_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        neck_3:
+        l_hand_lower_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        pelvis:
+        l_hand_lower_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        torso_2:
+        l_hand_upper_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        wheel_1:
+        l_hand_upper_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        wheel_2:
+        l_leg_ft:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        wheel_3:
+        l_sole:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        wheel_4:
+        l_toe:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
+        l_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_ankle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_arm_ft:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_foot_lower_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_foot_lower_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_foot_upper_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_foot_upper_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_hand_lower_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_hand_lower_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_hand_upper_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_hand_upper_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_leg_ft:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_sole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_toe:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         world:
           Alpha: 1
           Show Axes: false
           Show Trail: false
       Name: RobotModel
-      Robot Description: robot_description
-      TF Prefix: ci
+      Robot Description: xbotcore/robot_description
+      TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -345,223 +376,133 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        ankle1_1:
+        DWL:
           Value: true
-        ankle1_2:
+        DWS:
           Value: true
-        ankle1_3:
+        DWYTorso:
           Value: true
-        ankle1_4:
+        LElb:
           Value: true
-        ankle2_1:
+        LFoot:
           Value: true
-        ankle2_2:
+        LFootmot:
           Value: true
-        ankle2_3:
+        LForearm:
           Value: true
-        ankle2_4:
+        LHipMot:
           Value: true
-        arm1_1:
+        LLowLeg:
           Value: true
-        arm1_2:
+        LShp:
           Value: true
-        arm1_3:
+        LShr:
           Value: true
-        arm1_4:
+        LShy:
           Value: true
-        arm1_5:
+        LSoftHand:
           Value: true
-        arm1_6:
+        LThighLowLeg:
           Value: true
-        arm1_7:
+        LThighUpLeg:
           Value: true
-        arm1_8:
+        LWrMot2:
           Value: true
-        arm2_1:
+        LWrMot3:
           Value: true
-        arm2_2:
+        RElb:
           Value: true
-        arm2_3:
+        RFoot:
           Value: true
-        arm2_4:
+        RFootmot:
           Value: true
-        arm2_5:
+        RForearm:
           Value: true
-        arm2_6:
+        RHipMot:
           Value: true
-        arm2_7:
+        RLowLeg:
           Value: true
-        arm2_8:
+        RShp:
           Value: true
-        ball1:
+        RShr:
           Value: true
-        ball1_tip:
+        RShy:
           Value: true
-        ball2:
+        RSoftHand:
           Value: true
-        ball2_tip:
+        RThighLowLeg:
+          Value: true
+        RThighUpLeg:
+          Value: true
+        RWrMot2:
+          Value: true
+        RWrMot3:
+          Value: true
+        Waist:
           Value: true
         base_link:
           Value: true
-        ci/ankle1_1:
-          Value: true
-        ci/ankle1_2:
-          Value: true
-        ci/ankle1_3:
-          Value: true
-        ci/ankle1_4:
-          Value: true
-        ci/ankle2_1:
-          Value: true
-        ci/ankle2_2:
-          Value: true
-        ci/ankle2_3:
-          Value: true
-        ci/ankle2_4:
-          Value: true
-        ci/arm1_1:
-          Value: true
-        ci/arm1_2:
-          Value: true
-        ci/arm1_3:
-          Value: true
-        ci/arm1_4:
-          Value: true
-        ci/arm1_5:
-          Value: true
-        ci/arm1_6:
-          Value: true
-        ci/arm1_7:
-          Value: true
-        ci/arm1_8:
-          Value: true
-        ci/arm2_1:
-          Value: true
-        ci/arm2_2:
-          Value: true
-        ci/arm2_3:
-          Value: true
-        ci/arm2_4:
-          Value: true
-        ci/arm2_5:
-          Value: true
-        ci/arm2_6:
-          Value: true
-        ci/arm2_7:
-          Value: true
-        ci/arm2_8:
-          Value: true
-        ci/ball1:
-          Value: true
-        ci/ball1_tip:
-          Value: true
-        ci/ball2:
-          Value: true
-        ci/ball2_tip:
-          Value: true
-        ci/base_link:
-          Value: true
-        ci/com:
-          Value: true
-        ci/ft_arm1:
-          Value: true
-        ci/ft_arm2:
-          Value: true
-        ci/hip1_1:
-          Value: true
-        ci/hip1_2:
-          Value: true
-        ci/hip1_3:
-          Value: true
-        ci/hip1_4:
-          Value: true
-        ci/hip2_1:
-          Value: true
-        ci/hip2_2:
-          Value: true
-        ci/hip2_3:
-          Value: true
-        ci/hip2_4:
-          Value: true
-        ci/imu_link:
-          Value: true
-        ci/knee_1:
-          Value: true
-        ci/knee_2:
-          Value: true
-        ci/knee_3:
-          Value: true
-        ci/knee_4:
-          Value: true
-        ci/neck_1:
-          Value: true
-        ci/neck_2:
-          Value: true
-        ci/neck_3:
-          Value: true
-        ci/pelvis:
-          Value: true
-        ci/torso_2:
-          Value: true
-        ci/wheel_1:
-          Value: true
-        ci/wheel_2:
-          Value: true
-        ci/wheel_3:
-          Value: true
-        ci/wheel_4:
-          Value: true
-        ci/world:
-          Value: true
-        ft_arm1:
-          Value: true
-        ft_arm2:
-          Value: true
-        hip1_1:
-          Value: true
-        hip1_2:
-          Value: true
-        hip1_3:
-          Value: true
-        hip1_4:
-          Value: true
-        hip2_1:
-          Value: true
-        hip2_2:
-          Value: true
-        hip2_3:
-          Value: true
-        hip2_4:
+        gaze:
           Value: true
         imu_link:
           Value: true
-        knee_1:
+        l_ankle:
           Value: true
-        knee_2:
+        l_arm_ft:
           Value: true
-        knee_3:
+        l_foot_lower_left_link:
           Value: true
-        knee_4:
+        l_foot_lower_right_link:
           Value: true
-        neck_1:
+        l_foot_upper_left_link:
           Value: true
-        neck_2:
+        l_foot_upper_right_link:
           Value: true
-        neck_3:
+        l_hand_lower_left_link:
           Value: true
-        pelvis:
+        l_hand_lower_right_link:
           Value: true
-        torso_2:
+        l_hand_upper_left_link:
           Value: true
-        wheel_1:
+        l_hand_upper_right_link:
           Value: true
-        wheel_2:
+        l_leg_ft:
           Value: true
-        wheel_3:
+        l_sole:
           Value: true
-        wheel_4:
+        l_toe:
           Value: true
-        world:
+        l_wrist:
+          Value: true
+        r_ankle:
+          Value: true
+        r_arm_ft:
+          Value: true
+        r_foot_lower_left_link:
+          Value: true
+        r_foot_lower_right_link:
+          Value: true
+        r_foot_upper_left_link:
+          Value: true
+        r_foot_upper_right_link:
+          Value: true
+        r_hand_lower_left_link:
+          Value: true
+        r_hand_lower_right_link:
+          Value: true
+        r_hand_upper_left_link:
+          Value: true
+        r_hand_upper_right_link:
+          Value: true
+        r_leg_ft:
+          Value: true
+        r_sole:
+          Value: true
+        r_toe:
+          Value: true
+        r_wrist:
+          Value: true
+        torso:
           Value: true
       Marker Scale: 0.10000000149011612
       Name: TF
@@ -569,95 +510,105 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        ci/world:
-          ci/com:
-            {}
-          ci/pelvis:
-            ci/base_link:
-              {}
-            ci/hip1_1:
-              ci/hip2_1:
-                ci/knee_1:
-                  ci/ankle1_1:
-                    ci/ankle2_1:
-                      ci/wheel_1:
-                        {}
-            ci/hip1_2:
-              ci/hip2_2:
-                ci/knee_2:
-                  ci/ankle1_2:
-                    ci/ankle2_2:
-                      ci/wheel_2:
-                        {}
-            ci/hip1_3:
-              ci/hip2_3:
-                ci/knee_3:
-                  ci/ankle1_3:
-                    ci/ankle2_3:
-                      ci/wheel_3:
-                        {}
-            ci/hip1_4:
-              ci/hip2_4:
-                ci/knee_4:
-                  ci/ankle1_4:
-                    ci/ankle2_4:
-                      ci/wheel_4:
-                        {}
-            ci/imu_link:
-              {}
-            ci/torso_2:
-              ci/arm1_1:
-                ci/arm1_2:
-                  ci/arm1_3:
-                    ci/arm1_4:
-                      ci/arm1_5:
-                        ci/arm1_6:
-                          ci/arm1_7:
-                            ci/ball1:
-                              ci/arm1_8:
-                                {}
-                              ci/ball1_tip:
-                                {}
-                            ci/ft_arm1:
+        base_link:
+          Waist:
+            DWL:
+              DWS:
+                DWYTorso:
+                  LShp:
+                    LShr:
+                      LShy:
+                        LElb:
+                          LForearm:
+                            LWrMot2:
+                              LWrMot3:
+                                LSoftHand:
+                                  l_hand_lower_left_link:
+                                    {}
+                                  l_hand_lower_right_link:
+                                    {}
+                                  l_hand_upper_left_link:
+                                    {}
+                                  l_hand_upper_right_link:
+                                    {}
+                                l_wrist:
+                                  {}
+                            l_arm_ft:
                               {}
-              ci/arm2_1:
-                ci/arm2_2:
-                  ci/arm2_3:
-                    ci/arm2_4:
-                      ci/arm2_5:
-                        ci/arm2_6:
-                          ci/arm2_7:
-                            ci/ball2:
-                              ci/arm2_8:
-                                {}
-                              ci/ball2_tip:
-                                {}
-                            ci/ft_arm2:
+                  RShp:
+                    RShr:
+                      RShy:
+                        RElb:
+                          RForearm:
+                            RWrMot2:
+                              RWrMot3:
+                                RSoftHand:
+                                  r_hand_lower_left_link:
+                                    {}
+                                  r_hand_lower_right_link:
+                                    {}
+                                  r_hand_upper_left_link:
+                                    {}
+                                  r_hand_upper_right_link:
+                                    {}
+                                r_wrist:
+                                  {}
+                            r_arm_ft:
                               {}
-              ci/neck_1:
-                ci/neck_2:
-                  {}
-              ci/neck_3:
-                {}
-        world:
-          base_link:
-            {}
+                  torso:
+                    gaze:
+                      {}
+            LHipMot:
+              LThighUpLeg:
+                LThighLowLeg:
+                  LLowLeg:
+                    LFootmot:
+                      LFoot:
+                        l_ankle:
+                          {}
+                        l_leg_ft:
+                          {}
+                        l_sole:
+                          l_foot_lower_left_link:
+                            {}
+                          l_foot_lower_right_link:
+                            {}
+                          l_foot_upper_left_link:
+                            {}
+                          l_foot_upper_right_link:
+                            {}
+                          l_toe:
+                            {}
+            RHipMot:
+              RThighUpLeg:
+                RThighLowLeg:
+                  RLowLeg:
+                    RFootmot:
+                      RFoot:
+                        r_ankle:
+                          {}
+                        r_leg_ft:
+                          {}
+                        r_sole:
+                          r_foot_lower_left_link:
+                            {}
+                          r_foot_lower_right_link:
+                            {}
+                          r_foot_upper_left_link:
+                            {}
+                          r_foot_upper_right_link:
+                            {}
+                          r_toe:
+                            {}
+            imu_link:
+              {}
       Update Interval: 0
       Value: true
-    - Class: rviz/InteractiveMarkers
-      Enable Transparency: true
-      Enabled: false
-      Name: InteractiveMarkers
-      Show Axes: false
-      Show Descriptions: true
-      Show Visual Aids: false
-      Update Topic: /Com_cartesian_marker_server/update
-      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: ci/world
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -696,10 +647,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.35539841651916504
+      Pitch: -0.024601489305496216
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.2385783195495605
+      Yaw: 0.1153949499130249
     Saved: ~
 Window Geometry:
   Displays:
