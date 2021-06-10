@@ -11,6 +11,7 @@ RobotInterface:
 
 ## XBot2-related configuration
 
+
 # hal
 xbotcore_device_configs:
     sim: /home/liana/catkin_ws/src/CartesioTests/CartesioTestsCpp/configs/xbot/coman_config/hal/coman_gz.yaml
@@ -19,8 +20,8 @@ xbotcore_device_configs:
 
 # threads
 xbotcore_threads:
-    rt_main:  {sched: fifo , prio: 60, period: 0.001, core_id: 2}
-    nrt_main: {sched: other, prio: 0 , period: 0.005}
+    rt_main:  {sched: fifo, prio: 60, period: 0.001, core_id: 2}
+    nrt_main: {sched: other, prio: 0, period: 0.005}
 
 
 # plugins
@@ -33,6 +34,7 @@ xbotcore_plugins:
     ros_io: {thread: nrt_main, type: ros_io}
     ros_control: {thread: nrt_main, type: ros_control, params: {autostart: {type: bool, value: true}}}
     # cartesio: {thread: rt_main, type: cartesio_rt}
+
 
 # global parameters
 xbotcore_param:
