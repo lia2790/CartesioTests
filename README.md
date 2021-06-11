@@ -19,7 +19,7 @@ it and you can modify it just tuning some input parameters. **Here, you can find
 - **[CartesioTestsROSClient](https://github.com/lia2790/CartesioTests/tree/main/CartesioTestsROSClient)**
 - **[CartesioTestsCpp](https://github.com/lia2790/CartesioTests/tree/main/CartesioTestsCpp)**
 
-which each one implements one _C++ Example_ of _Cartesio's Documentation_ plus the simple _Launch file_. _**Download the Repo to have all the examples ready to use!**_
+where each one implements _C++ Examples_ of _Cartesio's Documentation_ plus _Launch file Example_. _**Download the Repo to have all the examples ready to use!**_
 
 ## ➤ Table of Contents
 <img aligh="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="550"/>
