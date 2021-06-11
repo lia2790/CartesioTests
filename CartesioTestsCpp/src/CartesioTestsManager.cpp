@@ -32,6 +32,10 @@ CartesioTestsManager::CartesioTestsManager ( std::string ns ) : _nh ( ns )
 	ROS_INFO_STREAM ("I am initializing CartesIO...");
 	initCartesIO();
 
+	//initialization ROS node
+	ROS_INFO_STREAM ("I am configuring ROBOT HOME POSITION...");
+	robotHome();
+
 	//initialization done
 	ROS_INFO_STREAM ("Initialization done.");
 }
@@ -54,32 +58,47 @@ void CartesioTestsManager::loadInputs()
 	_nh.param<std::string>("/robot_model_type",_robotModelType,"RBDL");
 	_nh.param<std::string>("/solver_type",_solverType,"OpenSoT");
 	_nh.param<std::string>("/task_name",_taskName,"taskA");
-	_nh.param<double>("/target_time",_targetTime,0.03);
+	_nh.param<std::vector<double>>("/task_position",_targetPosition,{0.0,0.0,0.0});
+	_nh.param<std::vector<double>>("/task_orientation",_targetOrientation,{0.0,0.0,0.0});
+	_nh.param<double>("/target_time",_targetTime,1.0);
+	_nh.param<double>("/homing_time",_homingTime,1.0);
 	_nh.param<bool>("/robot_is_floating",_robotIsFloating,true);
 }
 
 void CartesioTestsManager::initCartesIO()
 {
-	// init cartesio (settings)
+	// init cartesio (settings-mandatory order)
 	_cartesio.init(_robotUrdfPath,_robotSrdfPath,_robotIsFloating,_robotModelType);
 	_cartesio.setModel();
 	_cartesio.setRobot();
 	_cartesio.setProblem(_taskPath,_solverType);
 	_cartesio.setTask(_taskName);
-	_cartesio.setTaskTargetTime(_targetTime);
-	_cartesio.startControl();
+}
+
+void CartesioTestsManager::robotHome()
+{
+	_cartesio.goHome(_homingTime);
 }
 
 bool CartesioTestsManager::newReference()
 {
-	// new reference
-	return false;
+	// is target already sent?
+	if(_control) // no
+	{
+		std::cout << "New reference" << std::endl;
+		_cartesio.setTarget(_targetPosition,_targetOrientation,_targetTime);
+	}
+	else
+		std::cout << "No new reference specified" << std::endl;
+
+	return _control;
 }
 
 void CartesioTestsManager::startControl()
 {
 	// start control
 	_cartesio.startControl();
+	_control = false;
 }
 
 void CartesioTestsManager::timer_callback(const ros::TimerEvent& timer)
@@ -88,7 +107,8 @@ void CartesioTestsManager::timer_callback(const ros::TimerEvent& timer)
 	if(newReference())
 		startControl();
 
-	_time += _period; // update time
+	// update time
+	_time += _period;
 }
 
 void CartesioTestsManager::spin()

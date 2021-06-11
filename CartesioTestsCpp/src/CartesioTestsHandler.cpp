@@ -42,7 +42,7 @@ void CartesioTestsHandler::setModel()
 {
     // set model
     _model = XBot::ModelInterface::getModel(_xbot_cfg);
-    // homing
+    // home state
     homing();
 }
 
@@ -80,6 +80,12 @@ void CartesioTestsHandler::setTaskTargetTime(double target_time)
     _task->getPoseReference(Tref);
     Tref.translation()[1] += 0.05;
     setTaskTarget(Tref, target_time);
+}
+
+void CartesioTestsHandler::setTarget(std::vector<double> targetPosition, std::vector<double> targetOrientation, double target_time)
+{
+    minToTrasform(targetPosition,targetOrientation);
+    setTaskTarget(_target,target_time);
 }
 
 void CartesioTestsHandler::setTaskTarget(Eigen::Affine3d Tref, double target_time)
@@ -122,45 +128,69 @@ double CartesioTestsHandler::precision()
     return qdot.norm();
 }
 
+void CartesioTestsHandler::goHome(double time_to_home)
+{
+    // set home
+    setHome(time_to_home);
+    // go home
+    startControl();
+}
+
+void CartesioTestsHandler::reachTarget(int& current_state, bool& yes)
+{
+    // reach target routine
+    if(current_state == 0) // here we command a reaching motion
+    {
+        std::cout << "Commanding..." << std::endl;
+        _task->setPoseTarget(_target, _targetTime);
+        current_state++;
+        yes = false;
+    }
+    if(current_state == 1)
+    {   
+        if(_task->getTaskState() == State::Reaching)
+        {
+            std::cout << "Motion started!" << std::endl;
+            current_state++;
+            yes = false;
+        }
+    }
+    if(current_state == 2) // here we wait for it to be completed
+    {
+        if(_task->getTaskState() == State::Online)
+        {
+            Eigen::Affine3d T;
+            _task->getCurrentPose(T);
+            std::cout << "Motion completed!" << "Final error " 
+                    <<(T.inverse()*_target).translation().norm() << std::endl;
+            current_state++;
+            yes = false;
+        }
+    }
+    if(current_state == 3) // here we wait the robot to come to a stop
+    {
+        std::cout << "qdot norm is " << precision() << std::endl;
+        if(precision() < 1e-3)
+        {
+            std::cout << "Robot came to a stop, press ENTER to continue commanding.. \n";
+            std::cin.ignore();
+            current_state++;
+            yes = false;
+        }
+    }
+    if(current_state == 4) yes = true;
+}
+
 void CartesioTestsHandler::startControl()
 {
     int current_state = 0;
     double time = 0;
+    bool yes = false;
     while(true)
     {
-        if(current_state == 0) // here we command a reaching motion
-        {
-            std::cout << "Commanding..." << std::endl;
-            _task->setPoseTarget(_target, _targetTime);
-            current_state++;
-        }
-        if(current_state == 1)
-        {   if(_task->getTaskState() == State::Reaching)
-            {
-                std::cout << "Motion started!" << std::endl;
-                current_state++;
-            }
-        }
-        if(current_state == 2) // here we wait for it to be completed
-        {   if(_task->getTaskState() == State::Online)
-            {
-                Eigen::Affine3d T;
-                _task->getCurrentPose(T);
-                std::cout << "Motion completed! final error is " <<(T.inverse()*_target).translation().norm() << std::endl;
-                current_state++;
-            }
-        }
-        if(current_state == 3) // here we wait the robot to come to a stop
-        {
-            std::cout << "qdot norm is " << precision() << std::endl;
-            if(precision() < 1e-3)
-            {
-                std::cout << "Robot came to a stop, press ENTER to exit.. \n";
-                std::cin.ignore();
-                current_state++;
-            }
-        }
-        if(current_state == 4) break;
+        // reaching target
+        reachTarget(current_state,yes);
+        if(yes) break;
 
         // update and integrate model state
         _solver->update(time, _dt);
@@ -180,7 +210,32 @@ void CartesioTestsHandler::homing()
     Eigen::VectorXd qhome;
     _model->getRobotState("home", qhome);
     _model->setJointPosition(qhome);
-    _model->update();	
+    _model->update();
+}
+
+void CartesioTestsHandler::setHome(double time_to_home)
+{
+    // set home
+    Eigen::Affine3d Tref;
+    _task->getPoseReference(Tref);
+    setTaskTarget(Tref,time_to_home);
+}
+
+void CartesioTestsHandler::minToTrasform(std::vector<double> targetPosition, std::vector<double> targetOrientation)
+{
+    // set translation
+    _task->getPoseReference(_target);
+    _target.translation()[0] += targetPosition[0];
+    _target.translation()[1] += targetPosition[1];
+    _target.translation()[2] += targetPosition[2];
+    // set orientation
+    targetOrientation[0] = targetOrientation[0]*(M_PI/180);
+    targetOrientation[1] = targetOrientation[1]*(M_PI/180);
+    targetOrientation[2] = targetOrientation[2]*(M_PI/180);
+    Eigen::Quaternion<double> q = Eigen::AngleAxisd(targetOrientation[2],Eigen::Vector3d::UnitZ())*
+        Eigen::AngleAxisd(targetOrientation[1],Eigen::Vector3d::UnitY())*
+         Eigen::AngleAxisd(targetOrientation[0],Eigen::Vector3d::UnitX()); 
+    _target.linear() = _target.linear()*q.toRotationMatrix();
 }
 
 CartesioTestsHandler::~CartesioTestsHandler()

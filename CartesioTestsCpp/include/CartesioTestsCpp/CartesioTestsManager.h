@@ -46,8 +46,8 @@ class CartesioTestsManager
 	CartesioTestsHandler _cartesio; /* cartesio */
 	// -----------------------------------------------------------------------------------------
 
-	// Input Parameters -------------------------------------------------------------------
-	// Cartesio -----------------------------------------------------------------------------------
+	// Input Parameters ------------------------------------------------------------------------
+	// Cartesio --------------------------------------------------------------------------------
 	std::string _robotUrdfPath; /* robot urdf path */
 	std::string _robotSrdfPath; /* robot srdf path */
 	std::string _robotModelType; /* robot model type */
@@ -55,7 +55,16 @@ class CartesioTestsManager
 	std::string _taskName; /* task name */
 	std::string _solverType; /* cartesio solver type */
 	bool _robotIsFloating; /* is a floating robot (true-false) */
+	std::vector<double> _targetPosition; /* target position */
+	std::vector<double> _targetOrientation; /* target orientation */
 	double _targetTime; /* target reaching time */
+	double _homingTime; /* home reaching time */
+	// -----------------------------------------------------------------------------------------
+
+	// Status Parameters -----------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------------
+	bool _status = false; /* target status (false: !target sent - true: target sent) */
+	bool _control = true; /* control status (false: control finished - true: to be controlled) */
 	// -----------------------------------------------------------------------------------------
 
 	// Functions -------------------------------------------------------------------------------
@@ -95,6 +104,11 @@ public:
 	 * @return void
 	 */
 	void initCartesIO();
+	/**
+	 * robot homing
+	 * @return void
+	 */
+	void robotHome();
 	/**
 	 * set new task reference
 	 * @return true if a new reference received otherwise false

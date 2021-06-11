@@ -45,6 +45,8 @@ class CartesioTestsHandler
 
 	// Internal Data -------------------------------------------------------------------------
 	Eigen::Affine3d _target; /* task target */
+	std::vector<double> _targetPosition; /* target position */
+	std::vector<double> _targetOrientation; /* target orientation */
 	double _targetTime; /* target time */
 	// ---------------------------------------------------------------------------------------
 
@@ -90,12 +92,26 @@ public:
 	 */
 	void setTaskTargetTime(double target_time);
 	/**
+	  * set target
+	  * @param targetPosition : target position
+	  * @param targetOrientation : target orientation
+	  * @param targetTime : target time
+	  * @return void
+	  */
+	void setTarget(std::vector<double> targetPosition, std::vector<double> targetOrientation, double target_time);
+	/**
 	 * set task target time
 	 * @param Tref: reference transformation
 	 * @param target_time: target time
 	 * @return void
 	 */
 	void setTaskTarget(Eigen::Affine3d Tref, double target_time);
+	/**
+	 * go home
+	 * @param time_to_home: time to reach home configuration
+	 * @return void 
+	 */
+	void goHome(double time_to_home);
 	/**
 	 * start control
 	 * @return void
@@ -109,10 +125,22 @@ public:
 
 private:
 	/**
-	 * set home
+	 * homing
 	 * @return void
 	 */
 	void homing();
+	/**
+	 * set home
+	 * @return void
+	 */
+	void setHome(double time_to_home);
+	/**
+	 * reach target
+	 * @param current_state:
+	 * @param 
+	 * @return void
+	 */
+	void reachTarget(int& current_state, bool& yes);
 	/**
 	 * control robot: compute the control law and update the state
 	 * @return void
@@ -123,7 +151,13 @@ private:
 	 * @return joint position norm
 	 */
 	double precision();
-
+	/**
+	 * min to transform representation
+	 * @param targetPosition : target position
+	 * @param targetOrientation : target orientation
+	 * @return void
+	 */
+	void minToTrasform(std::vector<double> targetPosition, std::vector<double> targetOrientation);
 };
 
 #endif // __CARTESIO_TESTS_HANDLER_
