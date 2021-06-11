@@ -32,6 +32,7 @@ target_time: 1.0
 **Start Xbot2Core** to low level control the robot
 
 ```c++
+roscore
 ./setup_xbot2_coman.sh
 ```
 A _setup file_ is prepared for you, just run it with the command above.
