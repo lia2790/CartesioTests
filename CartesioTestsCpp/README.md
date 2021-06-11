@@ -62,6 +62,10 @@ roslaunch cartesio_tests_cpp CartesioTestsCpp_Coman.launch
 
 <br />
 
+https://user-images.githubusercontent.com/15608027/121657265-8b904c80-caa0-11eb-910e-6171326ac436.mp4
 
+<img align="left" src="https://user-images.githubusercontent.com/15608027/117687394-0d4a3d00-b1b8-11eb-8691-953fc945cf71.png" width="320"/>
+
+<br />
 
 [**➤ go home**](https://github.com/lia2790/CartesioTests)
