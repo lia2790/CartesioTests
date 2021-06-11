@@ -65,4 +65,5 @@ respectively!
 CartesioTests requires the following dependences:
 * [Eigen3](https://eigen.tuxfamily.org/index.php?title=Main_Page): to handle with basic algebra;
 * [CartesIO](https://advrhumanoids.github.io/CartesianInterface/): to handle robot tasks;
+* [XBOT2](https://github.com/ADVRHumanoids/xbot2_wip): to handle robot low level control;
 
