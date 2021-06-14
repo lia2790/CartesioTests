@@ -58,11 +58,10 @@ void CartesioTestsManager::loadInputs()
 	_nh.param<std::string>("/robot_model_type",_robotModelType,"RBDL");
 	_nh.param<std::string>("/solver_type",_solverType,"OpenSoT");
 	_nh.param<std::string>("/task_name",_taskName,"taskA");
-	_nh.param<std::vector<double>>("/task_position",_targetPosition,{0.0,0.0,0.0});
-	_nh.param<std::vector<double>>("/task_orientation",_targetOrientation,{0.0,0.0,0.0});
-	_nh.param<double>("/target_time",_targetTime,1.0);
+	_nh.param<std::vector<double>>("/target_time",_targetTimes,{1.0});
 	_nh.param<double>("/homing_time",_homingTime,1.0);
 	_nh.param<bool>("/robot_is_floating",_robotIsFloating,true);
+	listTargets();
 }
 
 void CartesioTestsManager::initCartesIO()
@@ -83,22 +82,27 @@ void CartesioTestsManager::robotHome()
 bool CartesioTestsManager::newReference()
 {
 	// is target already sent?
-	if(_control) // no
+	if(_nTargetsSent < _nTargets) // yes
 	{
+		int iTarget = _nTargetsSent;
 		std::cout << "New reference" << std::endl;
-		_cartesio.setTarget(_targetPosition,_targetOrientation,_targetTime);
+		std::cout << "Pos: " << _targetPositions[iTarget][0] << ' ' << _targetPositions[iTarget][1] << ' ' << _targetPositions[iTarget][2] << std::endl;
+		std::cout << "Orient: " << _targetOrientations[iTarget][0] << ' ' << _targetOrientations[iTarget][1] << ' ' << _targetOrientations[iTarget][2] << std::endl;
+		_cartesio.setTarget(_targetPositions[iTarget],_targetOrientations[iTarget],_targetTimes[iTarget]);
+		_nTargetsSent++;
+		return true;
 	}
-	else
-		std::cout << "No new reference specified" << std::endl;
-
-	return _control;
+	else // no
+	{
+		std::cout << "No new reference" << std::endl;
+		return false;
+	}
 }
 
 void CartesioTestsManager::startControl()
 {
 	// start control
 	_cartesio.startControl();
-	_control = false;
 }
 
 void CartesioTestsManager::timer_callback(const ros::TimerEvent& timer)
@@ -109,6 +113,38 @@ void CartesioTestsManager::timer_callback(const ros::TimerEvent& timer)
 
 	// update time
 	_time += _period;
+}
+
+void CartesioTestsManager::listTargets()
+{
+	// list targets
+	std::vector<double> targetPositions;
+	std::vector<double> targetOrientations;
+	_nh.param<std::vector<double>>("/task_position",targetPositions,{0.0,0.0,0.0});
+	_nh.param<std::vector<double>>("/task_orientation",targetOrientations,{0.0,0.0,0.0});
+	// inserting
+	_nTargets = targetPositions.size()/3;
+	for (int i = 0; i < targetPositions.size(); i+=3)
+	{
+		std::vector<double> app;
+		app.push_back(targetPositions[i]);
+		app.push_back(targetPositions[i+1]);
+		app.push_back(targetPositions[i+2]);
+		_targetPositions.push_back(app);
+		app.clear();
+		app.push_back(targetOrientations[i]);
+		app.push_back(targetOrientations[i+1]);
+		app.push_back(targetOrientations[i+2]);
+		_targetOrientations.push_back(app);
+	}
+	// print result
+	std::cout << "Targets listed: " << std::endl; 
+	for (int i = 0; i < _targetPositions.size(); ++i)
+		std::cout << _targetPositions[i][0] << ' ' << _targetPositions[i][1] << ' ' << _targetPositions[i][2] << ' ';
+	std::cout << std::endl;
+	for (int i = 0; i < _targetOrientations.size(); ++i)
+		std::cout << _targetOrientations[i][0] << ' ' << _targetOrientations[i][1] << ' ' << _targetOrientations[i][2] << ' ';
+	std::cout << std::endl;
 }
 
 void CartesioTestsManager::spin()

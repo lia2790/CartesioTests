@@ -55,16 +55,17 @@ class CartesioTestsManager
 	std::string _taskName; /* task name */
 	std::string _solverType; /* cartesio solver type */
 	bool _robotIsFloating; /* is a floating robot (true-false) */
-	std::vector<double> _targetPosition; /* target position */
-	std::vector<double> _targetOrientation; /* target orientation */
-	double _targetTime; /* target reaching time */
+	std::vector<std::vector<double>> _targetPositions; /* target position */
+	std::vector<std::vector<double>> _targetOrientations; /* target orientation */
+	std::vector<double> _targetTimes; /* target reaching time */
+	int _nTargets; /* n targets */
+	int _nTargetsSent = 0; /* n targets sent */
 	double _homingTime; /* home reaching time */
 	// -----------------------------------------------------------------------------------------
 
 	// Status Parameters -----------------------------------------------------------------------
 	// -----------------------------------------------------------------------------------------
-	bool _status = false; /* target status (false: !target sent - true: target sent) */
-	bool _control = true; /* control status (false: control finished - true: to be controlled) */
+	// bool _control = true; /* control status (false: control finished - true: to be controlled) */
 	// -----------------------------------------------------------------------------------------
 
 	// Functions -------------------------------------------------------------------------------
@@ -99,6 +100,11 @@ public:
 	 * @return void
 	 */
 	void loadInputs();
+	/**
+	 * list targets
+	 * @return void
+	 */
+	void listTargets();
 	/**
 	 * init cartesio
 	 * @return void
