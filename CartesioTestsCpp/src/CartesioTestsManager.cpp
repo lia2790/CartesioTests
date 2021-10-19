@@ -68,10 +68,15 @@ void CartesioTestsManager::initCartesIO()
 {
 	// init cartesio (settings-mandatory order)
 	_cartesio.init(_robotUrdfPath,_robotSrdfPath,_robotIsFloating,_robotModelType);
+	ROS_INFO_STREAM ("Init CartesIO...");
 	_cartesio.setModel();
+	ROS_INFO_STREAM ("Set Model...");
 	_cartesio.setRobot();
+	ROS_INFO_STREAM ("Set Robot...");
 	_cartesio.setProblem(_taskPath,_solverType);
+	ROS_INFO_STREAM ("Set Problem...");
 	_cartesio.setTask(_taskName);
+	ROS_INFO_STREAM ("Set Task...");
 }
 
 void CartesioTestsManager::robotHome()

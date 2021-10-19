@@ -19,7 +19,7 @@
     </include>
 
 	<!-- CartesioTestsCpp load configuration file -->
-	<rosparam file="$(find cartesio_tests_cpp)/configs/CartesioTestsCpp.yaml" command="load"/>
+	<rosparam file="$(find cartesio_tests_cpp)/configs/robots/CartesioTestsCpp.yaml" command="load"/>
 
 	<!-- CartesioTestsCpp launch -->
 	<node pkg="cartesio_tests_cpp" type="CartesioTestsCpp" name="CartesioTestsCpp" cwd = "node" respawn="false" output="screen"/>
