@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- CartesioTestsROSClient robot description -->
+	<param name="robot_description" textfile="$(find cartesio_tests_rosclient)/robots/coman/urdf/coman.urdf" />
+	<param name="robot_description_semantic" textfile="$(find cartesio_tests_rosclient)/robots/coman/srdf/coman.srdf" />
+	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_rosclient)/robots/coman/task/coman_stack.yaml"/>
+
+	  <!-- CartesioTestsROSClient launch cartesian interface -->
+    <include file="$(find cartesian_interface)/launch/cartesio.launch">
+        <!-- Control frequency (Hz) -->
+        <arg name="rate" value="100.0"/>
+        <!-- Spawn RviZ interacrive markers -->
+        <arg name="markers" value="true"/>
+        <!-- Set to false for fixed base  -->
+        <arg name="is_model_floating_base" value="true"/>
+    </include>
+
+	<!-- CartesioTestsROSClient load configuration file -->
+	<rosparam file="$(find cartesio_tests_rosclient)/configs/CartesioTestsROSClient.yaml" command="load"/>
+
+	<!-- CartesioTestsROSClient launch -->
+	<node pkg="cartesio_tests_rosclient" type="CartesioTestsROSClient" name="CartesioTestsROSClient" cwd = "node" respawn="false" output="screen" />
+
+	<!-- CartesioTests show in rviz -->
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find cartesio_tests_rosclient)/configs/rviz/disp.rviz"/>
+</launch>
