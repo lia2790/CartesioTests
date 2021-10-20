@@ -49,6 +49,7 @@ void CartesioTestsManager::initROSNode()
     _timer = _nh.createTimer(ros::Duration(_period), &CartesioTestsManager::timer_callback, this, false, false);
     _time = 0.0;
 }
+
 void CartesioTestsManager::loadInputs()
 {
 	// loading inputs

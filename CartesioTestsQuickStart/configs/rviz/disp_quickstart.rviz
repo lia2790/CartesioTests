@@ -60,299 +60,49 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
-        DWL:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        DWS:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        DWYTorso:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        LElb:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LFoot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LFootmot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LForearm:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LHipMot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LLowLeg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LShp:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LShr:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LShy:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LSoftHand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LThighLowLeg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LThighUpLeg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LWrMot2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        LWrMot3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        RElb:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RFoot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RFootmot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RForearm:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RHipMot:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RLowLeg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RShp:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RShr:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RShy:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RSoftHand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RThighLowLeg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RThighUpLeg:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RWrMot2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        RWrMot3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Waist:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        gaze:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        imu_link:
+        teleop2_link0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_ankle:
+        teleop2_link1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_arm_ft:
+          Value: true
+        teleop2_link2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_foot_lower_left_link:
+          Value: true
+        teleop2_link3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_foot_lower_right_link:
+          Value: true
+        teleop2_link4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_foot_upper_left_link:
+          Value: true
+        teleop2_link5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_foot_upper_right_link:
+          Value: true
+        teleop2_link6:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_hand_lower_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_hand_lower_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_hand_upper_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_hand_upper_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_leg_ft:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_sole:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_toe:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        l_wrist:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_ankle:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_arm_ft:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_foot_lower_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_foot_lower_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_foot_upper_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_foot_upper_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_hand_lower_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_hand_lower_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_hand_upper_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_hand_upper_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_leg_ft:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_sole:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_toe:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        r_wrist:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        torso:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
+          Value: true
         world:
           Alpha: 1
           Show Axes: false
@@ -370,7 +120,7 @@ Visualization Manager:
       Show Axes: false
       Show Descriptions: true
       Show Visual Aids: false
-      Update Topic: /Com_cartesian_marker_server/update
+      Update Topic: /arm_control_cartesian_marker_server/update
       Value: true
   Enabled: true
   Global Options:
@@ -400,25 +150,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.4508087635040283
+      Distance: 2.4263007640838623
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: -0.1293242871761322
+        Y: 0.1460821032524109
+        Z: -0.037588343024253845
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.15039849281311035
+      Pitch: 0.3053984045982361
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.273586273193359
+      Yaw: 0.7854005694389343
     Saved: ~
 Window Geometry:
   Displays:
