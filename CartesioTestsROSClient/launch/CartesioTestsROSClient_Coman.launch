@@ -17,7 +17,7 @@
     </include>
 
 	<!-- CartesioTestsROSClient load configuration file -->
-	<rosparam file="$(find cartesio_tests_rosclient)/configs/CartesioTestsROSClient.yaml" command="load"/>
+	<rosparam file="$(find cartesio_tests_rosclient)/configs/robots/CartesioTestsROSClient_Coman.yaml" command="load"/>
 
 	<!-- CartesioTestsROSClient launch -->
 	<node pkg="cartesio_tests_rosclient" type="CartesioTestsROSClient" name="CartesioTestsROSClient" cwd = "node" respawn="false" output="screen" />

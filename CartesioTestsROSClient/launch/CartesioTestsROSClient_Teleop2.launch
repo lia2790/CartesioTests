@@ -2,9 +2,9 @@
 <launch>
 
 	<!-- CartesioTestsROSClient robot description -->
-	<param name="robot_description" textfile="$(find cartesio_tests_rosclient)/robots/coman/urdf/coman.urdf" />
-	<param name="robot_description_semantic" textfile="$(find cartesio_tests_rosclient)/robots/coman/srdf/coman.srdf" />
-	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_rosclient)/robots/coman/task/coman_stack.yaml"/>
+	<param name="robot_description" textfile="$(find cartesio_tests_rosclient)/robots/teleop2/urdf/teleop2.urdf" />
+	<param name="robot_description_semantic" textfile="$(find cartesio_tests_rosclient)/robots/teleop2/srdf/teleop2.srdf" />
+	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_rosclient)/robots/teleop2/task/teleop2_stack.yaml"/>
 
 	  <!-- CartesioTestsROSClient launch cartesian interface -->
     <include file="$(find cartesian_interface)/launch/cartesio.launch">
@@ -13,11 +13,11 @@
         <!-- Spawn RviZ interacrive markers -->
         <arg name="markers" value="true"/>
         <!-- Set to false for fixed base  -->
-        <arg name="is_model_floating_base" value="true"/>
+        <arg name="is_model_floating_base" value="false"/>
     </include>
 
 	<!-- CartesioTestsROSClient load configuration file -->
-	<rosparam file="$(find cartesio_tests_rosclient)/configs/CartesioTestsROSClient.yaml" command="load"/>
+	<rosparam file="$(find cartesio_tests_rosclient)/configs/robots/CartesioTestsROSClient_Teleop2.yaml" command="load"/>
 
 	<!-- CartesioTestsROSClient launch -->
 	<node pkg="cartesio_tests_rosclient" type="CartesioTestsROSClient" name="CartesioTestsROSClient" cwd = "node" respawn="false" output="screen" />
