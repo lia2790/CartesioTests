@@ -48,6 +48,9 @@ void CartesioTestsManager::initROSNode()
     _period = 1.0 / _rate;
     _timer = _nh.createTimer(ros::Duration(_period), &CartesioTestsManager::timer_callback, this, false, false);
     _time = 0.0;
+
+    // target subscriber
+    _targetSubscriber = _nh.subscribe(_targetTopicName, 1, &CartesioTestsManager::subscribeTargetInput, this);
 }
 
 void CartesioTestsManager::loadInputs()
@@ -59,10 +62,11 @@ void CartesioTestsManager::loadInputs()
 	_nh.param<std::string>("/robot_model_type",_robotModelType,"RBDL");
 	_nh.param<std::string>("/solver_type",_solverType,"OpenSoT");
 	_nh.param<std::string>("/task_name",_taskName,"taskA");
+	_nh.param<std::string>("/task_topic_name",_targetTopicName,"taskTopicName");
 	_nh.param<std::vector<double>>("/target_time",_targetTimes,{1.0});
 	_nh.param<double>("/homing_time",_homingTime,1.0);
 	_nh.param<bool>("/robot_is_floating",_robotIsFloating,true);
-	listTargets();
+	// listTargets();
 }
 
 void CartesioTestsManager::initCartesIO()
@@ -114,8 +118,9 @@ void CartesioTestsManager::startControl()
 void CartesioTestsManager::timer_callback(const ros::TimerEvent& timer)
 {
 	// control
-	if(newReference())
-		startControl();
+	if(_targetSubscribed)
+		if(newReference())
+			startControl();
 
 	// update time
 	_time += _period;
@@ -152,6 +157,36 @@ void CartesioTestsManager::listTargets()
 		std::cout << _targetOrientations[i][0] << ' ' << _targetOrientations[i][1] << ' ' << _targetOrientations[i][2] << ' ';
 	std::cout << std::endl;
 }
+
+void CartesioTestsManager::subscribeTargetInput(const geometry_msgs::PoseStamped::ConstPtr& msg)
+{
+    if(!_targetSubscribed)
+    {
+        std::cout << "target subscribed..." << std::endl;
+        std::vector<double> app;
+		app.push_back(msg->pose.position.x);
+		app.push_back(msg->pose.position.y);
+		app.push_back(msg->pose.position.z);
+		_targetPositions.push_back(app);
+		setOrientationFromQuaternion(msg->pose.orientation.x,msg->pose.orientation.y,msg->pose.orientation.z,msg->pose.orientation.w);
+        std::cout << "Starting..." << std::endl;
+        _targetSubscribed = true;
+    }
+}
+
+void CartesioTestsManager::setOrientationFromQuaternion(double x, double y, double z, double w)
+{
+	//
+	Eigen::Quaternionf q(w,x,y,z);
+	auto euler = q.toRotationMatrix().eulerAngles(0, 1, 2);
+
+	std::vector<double> app;
+	app.push_back(euler[0]);
+	app.push_back(euler[1]);
+	app.push_back(euler[2]);
+	_targetOrientations.push_back(app);
+}
+
 
 void CartesioTestsManager::spin()
 {

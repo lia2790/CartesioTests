@@ -23,9 +23,11 @@
 // Eigen 
 #include <Eigen/Dense>
 #include <Eigen/Core>
+#include <Eigen/Geometry> 
 
 // ROS
 #include <ros/ros.h>
+#include <geometry_msgs/PoseStamped.h>
 
 /**
  * @brief Class Cartesio Tests Manager
@@ -45,6 +47,7 @@ class CartesioTestsManager
 	// CartesioTestsManager --------------------------------------------------------------------
 	CartesioTestsHandler _cartesio; /* cartesio */
 	// -----------------------------------------------------------------------------------------
+	ros::Subscriber _targetSubscriber; // target subscriber
 
 	// Input Parameters ------------------------------------------------------------------------
 	// Cartesio --------------------------------------------------------------------------------
@@ -54,6 +57,7 @@ class CartesioTestsManager
 	std::string _taskPath; /* task definition path */
 	std::string _taskName; /* task name */
 	std::string _solverType; /* cartesio solver type */
+	std::string _targetTopicName; /* topic name */
 	bool _robotIsFloating; /* is a floating robot (true-false) */
 	std::vector<std::vector<double>> _targetPositions; /* target position */
 	std::vector<std::vector<double>> _targetOrientations; /* target orientation */
@@ -61,6 +65,7 @@ class CartesioTestsManager
 	int _nTargets; /* n targets */
 	int _nTargetsSent = 0; /* n targets sent */
 	double _homingTime; /* home reaching time */
+	bool _targetSubscribed = false;
 	// -----------------------------------------------------------------------------------------
 
 	// Status Parameters -----------------------------------------------------------------------
@@ -125,6 +130,14 @@ public:
 	 * @return void
 	 */
 	void startControl();
+
+	/**
+	 * 
+	 */
+	void subscribeTargetInput(const geometry_msgs::PoseStamped::ConstPtr& msg);
+
+	//
+	void setOrientationFromQuaternion(double x, double y, double z, double w);
 };
 
 #endif // __CARTESIO_TESTS_MANAGER_
