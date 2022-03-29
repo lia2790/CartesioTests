@@ -9,4 +9,3 @@ task_position: [0.0,0.05,0.0,0.0,-0.02,0.10]
 task_orientation: [0.0,0.0,90.0,0.0,0.0,0.0]
 target_time: [3.0,3.0]
 homing_time: 3.0
-target_topic_name: "/name" 

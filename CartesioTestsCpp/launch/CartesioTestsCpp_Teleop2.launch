@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- CartesioTestsCpp robot description -->
+	<param name="robot_description" textfile="$(find cartesio_tests_cpp)/robots/teleop2/urdf/teleop2.urdf" />
+	<param name="robot_description_semantic" textfile="$(find cartesio_tests_cpp)/robots/teleop2/srdf/teleop2.srdf" />
+	<param name="cartesian/problem_description" textfile="$(find cartesio_tests_cpp)/robots/teleop2/task/teleop2_stack.yaml"/>
+
+	<!-- CartesioTestsCpp load configuration file -->
+	<rosparam file="$(find cartesio_tests_cpp)/configs/robots/CartesioTestsCppTeleop2.yaml" command="load"/>
+
+	<!-- CartesioTestsCpp launch -->
+	<node pkg="cartesio_tests_cpp" type="CartesioTestsCpp" name="CartesioTestsCpp" cwd = "node" respawn="false" output="screen"/>
+
+	<!-- CartesioTestsCpp show in rviz -->
+	<!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find cartesio_tests_cpp)/configs/rviz/disp.rviz"/>-->
+
+</launch>
