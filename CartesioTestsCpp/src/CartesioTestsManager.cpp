@@ -52,7 +52,6 @@ void CartesioTestsManager::initROSNode()
     // target subscriber
     _targetSubscriber = _nh.subscribe(_targetTopicName, 1, &CartesioTestsManager::subscribeTargetInput, this);
 }
-
 void CartesioTestsManager::loadInputs()
 {
 	// loading inputs

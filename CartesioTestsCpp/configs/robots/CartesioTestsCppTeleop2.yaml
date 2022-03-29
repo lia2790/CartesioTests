@@ -5,7 +5,7 @@ robot_is_floating: false
 robot_model_type: "RBDL"
 solver_type: "OpenSot"
 task_name: "arm_control"
-task_position: [0.05,0.0,0.0]
-task_orientation: [0.0,0.0,0.0]
-target_time: [10.0]
-homing_time: 10.0
+task_position: [0.05,0.05,0.05]
+task_orientation: [0.0,1.0,0.0]
+target_time: [3.0]
+homing_time: 3.0

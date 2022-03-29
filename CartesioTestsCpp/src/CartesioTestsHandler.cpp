@@ -163,8 +163,6 @@ void CartesioTestsHandler::reachTarget(int& current_state, bool& yes)
             _task->getCurrentPose(T);
             std::cout << "Motion completed!" << "Final error " 
                     <<(T.inverse()*_target).translation().norm() << std::endl;
-            std::cout << "Motion completed!" << "Final Position " 
-                    << T.translation().transpose() << std::endl;
             current_state++;
             yes = false;
         }
